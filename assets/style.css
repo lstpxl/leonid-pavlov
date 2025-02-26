@@ -317,10 +317,10 @@ footer {
   font-size: 75%;
   margin-top: 3rem;
   margin-bottom: 1rem;
-  font-size: 75%;
   color: var(--ebony);
   display: flex;
   flex-direction: column;
+  gap: 1em;
   justify-content: space-between;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
