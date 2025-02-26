@@ -1,3 +1,5 @@
 # Архив стихотворений Павлова Леонида Семёновича
 
-Built using Hugo (https://gohugo.io)
+Published at [Github Pages](https://lstpxl.github.io/leonid-pavlov/)
+
+Built using [Hugo](https://gohugo.io)
