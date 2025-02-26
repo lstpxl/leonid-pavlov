@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <ul>
+    <section id="scroll_anchor" class="two_column">
+      <h3>все записи:</h3>
+      <ol>
+        {{ range sort (where .Site.RegularPages "Section" "recordings") "Title" "asc" }}
+          <li>
+            <a class="" href="{{ .Permalink }}">{{ .Params.title | default .RelPermalink }}</a>
+          </li>
+        {{ end }}
+      </ol>
+    </section>
+  </ul>
+{{ end }}

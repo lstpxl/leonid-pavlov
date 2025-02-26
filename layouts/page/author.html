@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section id="scroll_anchor" class="sided">
+  <main>
+    <div class="author_photo_container">
+      <div class="author_photo_sep" aria-label="Леонид Семёнович Павлов"></div>
+    </div>
+    <article class="about first">
+      <div class="preface_container">
+        {{ partial "preface-grandson.html" . }}
+      </div>
+    </article>
+    <article class="about">
+      <div class="preface_container">
+        {{ partial "bio.html" . }}
+      </div>
+    </article>
+  </main>
+</section>
+{{ end }}

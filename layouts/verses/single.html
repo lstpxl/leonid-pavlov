@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section id="scroll_anchor" class="sided">
+  <main>
+    <article class="verse">{{ if and .Page.Title (not .Params.hidetitle) }}<h1>{{ .Page.Title }}</h1>{{ end }}{{ .Content }}{{ with .Page.Params.datesigned }}<p class="date">{{ . }}</p>{{ end }}</article>
+  </main>
+  <aside>
+    <h3>все стихи:</h3>
+      <ol>
+        {{ range sort (where .Site.RegularPages "Section" "verses") "Title" }}
+          <li class="{{ if eq .RelPermalink $.Page.RelPermalink }}active{{ end }}">
+            <a  href="{{ .Permalink }}">
+              {{ .Params.title | default .RelPermalink }}
+            </a>
+          </li>
+        {{ end }}
+      </ol>
+  </aside>
+</section>
+{{ end }}

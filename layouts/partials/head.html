@@ -1,0 +1,16 @@
+<head>
+  <title>{{ .Site.Title }}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src *; media-src *;">
+  <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="{{ .Site.BaseURL }}favicon/favicon.svg">
+  <link rel="shortcut icon" href="{{ .Site.BaseURL }}favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL }}favicon/apple-touch-icon.png">
+  <link rel="manifest" href="{{ .Site.BaseURL }}favicon/site.webmanifest">
+  {{ with resources.Get "style.css" }}
+    {{ with resources.ExecuteAsTemplate "style.css" $ . }}
+      <link rel="stylesheet" href="{{ .Permalink }}">
+    {{ end }}
+  {{ end }}
+</head>

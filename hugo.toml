@@ -1,0 +1,16 @@
+languageCode = 'ru'
+title = 'Стихи - Леонид Павлов'
+disableKinds = ['taxonomy', 'term']
+[permalinks]
+  recordings = "/recordings/:filename/"
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = true
+      unsafe = true
+    # [markup.goldmark.extensions]
+    #   [markup.goldmark.extensions.passthrough]
+    #     enable = true
+    #     [markup.goldmark.extensions.passthrough.delimiters]
+    #       block = []
+    #       inline = []
