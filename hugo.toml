@@ -4,7 +4,7 @@ disableKinds = ['taxonomy', 'term']
 # RecordingsBaseUrl1 = 'http://www.lastpixel.ru/leonidpavlov/audio/'
 # RecordingsBaseUrl2 = 'https://pavlov.photography/leonid-pavlov/audio-files/'
 [params]
-  RecordingsBaseUrl = 'http://www.lastpixel.ru/leonidpavlov/audio/'
+  RecordingsBaseUrl = 'https://pavlov.photography/leonid-pavlov/audio-files/'
 [permalinks]
   recordings = "/recordings/:filename/"
 [markup]
