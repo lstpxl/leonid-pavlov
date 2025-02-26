@@ -305,10 +305,11 @@ ol li.active a:hover {
 }
 
 footer {
+  font-size: 75%;
   margin-top: 3rem;
   margin-bottom: 1rem;
-  font-size: 87.5%;
-  color: var(--battleship_gray);
+  font-size: 75%;
+  color: var(--ebony);
   display: flex;
   flex-direction: column;
   justify-content: space-between;

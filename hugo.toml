@@ -1,8 +1,6 @@
 languageCode = 'ru'
 title = 'Стихи - Леонид Павлов'
 disableKinds = ['taxonomy', 'term']
-# RecordingsBaseUrl1 = 'http://www.lastpixel.ru/leonidpavlov/audio/'
-# RecordingsBaseUrl2 = 'https://pavlov.photography/leonid-pavlov/audio-files/'
 [params]
   RecordingsBaseUrl = 'https://pavlov.photography/leonid-pavlov/audio-files/'
 [permalinks]
