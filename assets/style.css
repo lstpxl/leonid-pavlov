@@ -344,25 +344,18 @@ ol {
   font-size: 0.875rem;
 }
 
-@media only screen and (min-width: 825px) {
-  ol {
-    
-    /* font-size: 0.75rem; */
-  }
-}
-
-.two_column ol {
-  font-size: 0.875rem;
-}
-
 .two_column ol {
   column-count: 1;
   column-gap: 1em;
 }
 
 @media only screen and (min-width: 825px) {
+  ol {
+    
+  }
   .two_column ol {
     column-count: 2;
+    font-size: 1rem;
   }
 }
 
