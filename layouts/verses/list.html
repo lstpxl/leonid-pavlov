@@ -2,11 +2,15 @@
   <section id="scroll_anchor" class="two_column">
     <h3>все стихи:</h3>
     <ol>
+      
       {{ range sort (where .Site.RegularPages "Section" "verses") "Title" }}
         <li>
           <a href="{{ .RelPermalink }}">{{ .Params.title | default .RelPermalink }}</a>
         </li>
       {{ end }}
     </ol>
+    <div class="medal_photo_box">
+      <div class="medal_photo_sep" aria-label="Леонид Семёнович Павлов"></div>
+    </div>
   </section>
 {{ end }}

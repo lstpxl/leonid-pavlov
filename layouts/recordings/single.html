@@ -7,6 +7,7 @@
       <audio preload="auto" controls="" controlslist="nofullscreen nodownload">
         <source src="{{ .Site.Params.RecordingsBaseUrl }}{{ .Page.Params.filename }}" type="audio/mpeg">Ваш браузер не поддерживает тэг audio.
       </audio>
+      {{ .Content }}
     </article>
   </main>
   <aside>
