@@ -221,13 +221,14 @@ main {
 
 article {
   padding: 1.5em;
+  /* color: var(--smoky_black); */
   background-color: var(--alabaster);
   border-radius: 0.125em;
   box-shadow: 0 0.125em 0.2em 0 var(--smoky_black);
   text-align: left;
 }
 
-article.h2 {
+article.verse {
   font-size: 1.25rem;
   color: var(--smoky_black);
   margin-left: 0.2em;
