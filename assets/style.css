@@ -132,7 +132,11 @@ header {
 }
 
 header h2 {
-  background: url("{{ .Site.BaseURL }}header-bg.png") no-repeat top left;
+  /* background: url("{{ .Site.BaseURL }}header-bg.png") no-repeat top left; */
+  background: url("{{ .Site.BaseURL }}empty-page-v2.webp") no-repeat top left;
+  background-size: 350px 256px;
+  background-repeat: no-repeat;
+  background-position: bottom right;
   width: 350px;
   height: 70px;
   text-align: center;
@@ -214,8 +218,6 @@ main {
   }
 }
 
-
-
 article {
   padding: 1.5em;
   background-color: var(--alabaster);
@@ -224,7 +226,7 @@ article {
   text-align: left;
 }
 
-article.verse {
+article.h2 {
   font-size: 1.25rem;
   color: var(--smoky_black);
   margin-left: 0.2em;
@@ -433,7 +435,7 @@ ol li.active a:hover {
 .hat_photo_sep {
   z-index: 3;
   background-position: right top;
-  background-image: url("{{ .Site.BaseURL }}hat.webp");
+  background-image: url("{{ .Site.BaseURL }}hat-v3.webp");
   background-size: 300px 387px;
   background-repeat: no-repeat;
   min-width: 300px;
