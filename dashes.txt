@@ -5,3 +5,6 @@
 <!-- Вариант автора: -->
 <p class="to"></p>
 
+А́ /* Combining acute accent */
+А&#x301; /* Combining acute accent */
+◌́  /* Combining acute accent */
