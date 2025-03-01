@@ -188,7 +188,7 @@ nav a:hover svg {
 
 
 section {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   position: relative;
 }
 
@@ -207,17 +207,22 @@ section.sided {
 /* --- Main block ---------------------------------------------- */
 
 main {
+  position: relative;
   /* flex-grow: 1; */
   /* flex-shrink: 1; */
-  position: relative;
+  width: fit-content;
 }
 
 @media only screen and (min-width: 825px) {
   main {
     /* width: 67%; */
-    width: clamp(500px, min-content, 800px);
+    /* width: clamp(min-content, min-content, 800px); */
     /* width: clamp(500px, 700px, 800px); */
-    min-width: 450px;
+    /* min-width: 450px; */
+    /* width: max( 20%, 450px ); */
+    min-width: 550px;
+    /* width: 30rem; */
+    width: fit-content;
   }
 }
 
@@ -270,6 +275,8 @@ article.verse h1.margin_bottom_2em {
 article.verse p {
   margin-top: 1em;
   margin-bottom: 1em;
+  /* white-space: nowrap; */
+  /* width: fit-content; */
 }
 
 @media only screen and (min-width: 825px) {
@@ -332,7 +339,8 @@ article.verse div.quote {
 /* --- Side ---------------------------------------------- */
 
 aside {
-  flex-shrink: 4;
+  /* flex-shrink: 1; */
+  /* flex-grow: 1; */
 }
 
 h3 {
