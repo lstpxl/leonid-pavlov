@@ -134,7 +134,7 @@ header {
 
 header h2 {
   /* background: url("{{ .Site.BaseURL }}header-bg.png") no-repeat top left; */
-  background: url("{{ .Site.BaseURL }}empty-page-v2.webp") no-repeat top left;
+  background: url("{{ .Site.BaseURL }}empty-page-v3.webp") no-repeat top left;
   background-size: 350px 256px;
   background-repeat: no-repeat;
   background-position: bottom right;
