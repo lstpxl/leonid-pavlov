@@ -207,8 +207,8 @@ section.sided {
 /* --- Main block ---------------------------------------------- */
 
 main {
-  flex-grow: 1;
-  flex-shrink: 1;
+  /* flex-grow: 1; */
+  /* flex-shrink: 1; */
   position: relative;
 }
 
@@ -216,6 +216,8 @@ main {
   main {
     /* width: 67%; */
     width: clamp(500px, min-content, 800px);
+    /* width: clamp(500px, 700px, 800px); */
+    min-width: 450px;
   }
 }
 
@@ -425,75 +427,45 @@ ol li.active a:hover {
 
 }
 
+/* HAT -------------- */
 
 .hat_photo_box {
   width: 100%;
   height: calc( 1045 / 811 * var(--hat_width) - 6.5em );
   position: relative;
-  /* z-index: 3; */
   transition: ease-in-out 0.5s;
   --hat_width: 250px;
 }
 
 .hat_photo_sep {
-  /* z-index: 3; */
   background-position: right top;
   background-image: url("{{ .Site.BaseURL }}hat-v3.webp");
-  /* proportion 811 x 1045 = 0.776 */
-  /* background-size: 300px 387px; */
-  /* base width = 300px */
   background-repeat: no-repeat;
-  /* min-width: 300px; */
-  /* min-height: 387px; */
   background-position: center center;
   background-repeat: no-repeat;
-  /* background-color: var(--alabaster); */
-  
   background-size: calc( var(--hat_width) ) calc( 1045 / 811 * var(--hat_width) );
   width: calc( var(--hat_width) );
   height: calc( 1045 / 811 * var(--hat_width) );
-  /* border-radius: 0.125rem; */
   position: absolute;
-  /* margin-left: 8em; */
-  /* float: right; */
-  /* top: -1em; */
-  /* right: 0; */
-  /* box-shadow: 0 0.125rem 0.375rem 0 var(--smoky_black); */
   top: -1.5em;
-  right: calc(100% / 2);
+  right: 50%;
   transform: translateX(50%);
-  transition: ease-in-out 0.5s;
-}
-
-.after_hat {
-  /* position: absolute;  */
-  /* top: calc(320px);  */
-  /* left:0;  */
-  /* z-index: 2; */
   transition: ease-in-out 0.5s;
 }
 
 @media only screen and (min-width: 825px) {
   .hat_photo_sep {
-    
-    /* z-index: 1; */
     top: -2.5em;
     right: 10%;
     transform: none;
   }
   .hat_photo_box {
     --hat_width: 300px;
-    z-index: 1;
-    /* height: calc(387px - 8.5em); */
     height: calc( 1045 / 811 * var(--hat_width) - 8.5em );
   }
-  .after_hat {
-    /* position: absolute;  */
-    /* top: calc(260px);  */
-    /* left:0;  */
-    /* z-index: 2; */
-  }
 }
+
+/* HAT -------------- */
 
 .medal_photo_box {
   width: 100%;
