@@ -210,7 +210,7 @@ main {
   position: relative;
   /* flex-grow: 1; */
   /* flex-shrink: 1; */
-  width: fit-content;
+  /* width: fit-content; */
 }
 
 @media only screen and (min-width: 825px) {
@@ -220,15 +220,15 @@ main {
     /* width: clamp(500px, 700px, 800px); */
     /* min-width: 450px; */
     /* width: max( 20%, 450px ); */
-    min-width: 550px;
+    /* min-width: 550px; */
     /* width: 30rem; */
-    width: fit-content;
+    /* width: fit-content; */
   }
 }
 
 article {
   padding: 1.5em;
-  /* color: var(--smoky_black); */
+  color: var(--smoky_black);
   background-color: var(--alabaster);
   border-radius: 0.125em;
   box-shadow: 0 0.125em 0.2em 0 var(--smoky_black);
@@ -237,10 +237,15 @@ article {
 
 article.verse {
   font-size: 1.25rem;
-  color: var(--smoky_black);
   margin-left: 0.2em;
   min-height: 1em;
-  padding-top: 2em;
+  padding: 2em;
+  min-width: max-content;
+  /* min-width: clamp(max-content, 600px, 620px); */
+}
+
+article.record {
+  min-width: 500px;
 }
 
 article.verse h1 {
@@ -281,7 +286,7 @@ article.verse p {
 
 @media only screen and (min-width: 825px) {
   article.verse {
-    padding-left: 2em;
+    /* padding-left: 2em; */
   }
 }
 
@@ -385,7 +390,7 @@ ol li {
   position: relative;
   padding-left: 4em;
   /* margin-top: 0.6em; */
-  margin-bottom: 0.6em;
+  margin-bottom: 0.8em;
 }
 ol li::before {
   content: counter(custom-counter) ". ";
