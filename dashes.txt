@@ -5,8 +5,12 @@
 <!-- Исправление автора:  -->
 <!-- Вариант автора:  -->
 <!-- Вариант автора, книжка 5:  -->
+<!-- Вариант автора, старый:  -->
 <p class="to"></p>
 
 А́ /* Combining acute accent */
-А&#x301; /* Combining acute accent */
+&#x301; /* Combining acute accent */
 ◌́  /* Combining acute accent */
+“” Typographic quotes (informally "66 and 99")
+«...» Primary russian quotes
+„...“ Secondary russian quotes
