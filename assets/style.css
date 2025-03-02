@@ -241,6 +241,8 @@ article.verse {
   min-height: 1em;
   padding: 2em;
   min-width: max-content;
+  width: 400px;
+  /* min-width: max(max-content, 600px); */
   /* min-width: clamp(max-content, 600px, 620px); */
   
 }
