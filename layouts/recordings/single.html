@@ -1,7 +1,7 @@
 {{ define "main" }}
-<section id="scroll_anchor" class="sided">
+<section id="scroll_anchor">
   <main>
-    <article class="verse record">
+    <article class="record">
       {{ partial "large-speaker-icon.html" . }}
       <h1 class="margin_bottom_1em">{{ .Page.Title }}</h1>
       <audio preload="auto" controls="" controlslist="nofullscreen nodownload">
@@ -10,6 +10,8 @@
       {{ .Content }}
     </article>
   </main>
+</section>
+<section id="scroll_anchor" class="two_column">
   <aside>
     <h3>все записи:</h3>
     <ol>
@@ -18,5 +20,8 @@
       {{ end }}
     </ol>
   </aside>
+  <div class="couch_photo_box">
+    <div class="couch_photo_sep" aria-label="Леонид Семёнович Павлов"></div>
+  </div>
 </section>
 {{ end }}
