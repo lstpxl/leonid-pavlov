@@ -237,18 +237,27 @@ article {
 
 article.verse {
   font-size: 1.25rem;
-  margin-left: 0.2em;
+  /* margin-left: 0.2em; */
+  /* margin-right: 0.2em; */
   min-height: 1em;
   padding: 2em;
   min-width: max-content;
-  width: 400px;
+  width: 100%;
   /* min-width: max(max-content, 600px); */
   /* min-width: clamp(max-content, 600px, 620px); */
   
 }
 
 article.record {
-  min-width: 500px;
+  min-width: 300px; 
+}
+@media only screen and (min-width: 825px) {
+  article.verse {
+    width: 400px;
+  }
+  article.record {
+    min-width: 500px; 
+  }
 }
 
 article.verse h1 {
