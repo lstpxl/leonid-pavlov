@@ -30,11 +30,6 @@ html {
   font-weight: 400;
   font-style: normal;
 }
-@media only screen and (min-width: 825px) {
-  html {
-    /* font-size: 100%; */
-  }
-}
 
 *,
 *::before,
@@ -90,7 +85,8 @@ h6 {
 #root {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
+  justify-content: stretch; 
   gap: 3em;
   margin-left: 0.5em;
   margin-right: 0.5em;
@@ -195,7 +191,7 @@ section {
 section.sided {
   display: flex;
   flex-direction: column;
-  gap: 2rem;;
+  gap: 1.5rem;;
 }
 
 @media only screen and (min-width: 825px) {
@@ -223,6 +219,7 @@ main {
     /* min-width: 550px; */
     /* width: 30rem; */
     /* width: fit-content; */
+    flex: 0 1 auto;
   }
 }
 
@@ -253,7 +250,7 @@ article.record {
 }
 @media only screen and (min-width: 825px) {
   article.verse {
-    width: 400px;
+    min-width: 400px;
     padding: 2em;
   }
   article.record {
@@ -268,12 +265,13 @@ article.verse h1 {
   margin-bottom: 1em;
   line-height: 110%;
   color: var(--ebony);
-  max-width: calc(100vw - 5em);
+  /* max-width: calc(100vw - 5em); */
 }
 
 @media only screen and (min-width: 825px) {
   article.verse h1 {
-    max-width: 18em;
+    /* max-width: 18em; */
+    max-width: 450px;
   }
 }
 
@@ -371,12 +369,13 @@ article.verse span.comment {
 aside {
   /* flex-shrink: 1; */
   /* flex-grow: 1; */
+  flex: 1;
 }
 
 h3 {
   margin-bottom: 1em;
   margin-left: 1em;
-  font-size: 150%;
+  font-size: 1.5rem;
   color: var(--ash_gray);
   font-weight: 700;
 }
@@ -385,14 +384,11 @@ ol {
   list-style: none;
   counter-reset: custom-counter;
   color: var(--battleship_gray);
-  /* font-size: 0.875rem; */
-  /* font-size: 75%; */
   line-height: 1.3;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
   padding-inline-start: 0;
-  font-size: 0.875rem;
 }
 
 .two_column ol {
@@ -402,7 +398,7 @@ ol {
 
 @media only screen and (min-width: 825px) {
   ol {
-    
+    font-size: 0.875rem;
   }
   .two_column ol {
     column-count: 2;
@@ -414,7 +410,6 @@ ol li {
   counter-increment: custom-counter;
   position: relative;
   padding-left: 4em;
-  /* margin-top: 0.6em; */
   margin-bottom: 0.8em;
 }
 ol li::before {
