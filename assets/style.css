@@ -242,6 +242,7 @@ article.verse {
   padding: 2em;
   min-width: max-content;
   /* min-width: clamp(max-content, 600px, 620px); */
+  
 }
 
 article.record {
@@ -255,6 +256,13 @@ article.verse h1 {
   margin-bottom: 1em;
   line-height: 110%;
   color: var(--ebony);
+  max-width: calc(100vw - 5em);
+}
+
+@media only screen and (min-width: 825px) {
+  article.verse h1 {
+    max-width: 18em;
+  }
 }
 
 h1.error {
@@ -298,7 +306,7 @@ article.verse .date {
   text-align: right;
 }
 
-article.verse .comment {
+article.verse p.comment {
   color: var(--ebony);
   font-style: italic;
   margin-left: 1.125em;
@@ -339,6 +347,11 @@ article.verse div.quote {
 
 .verse audio {
   width: 100%;
+}
+
+article.verse span.comment {
+  color: var(--air_superiority_blue);
+  font-style: italic;
 }
 
 /* --- Side ---------------------------------------------- */
@@ -607,6 +620,12 @@ article.about p.right_aligned {
   color: var(--battleship_gray);
   font-size: 1rem;
 }
+
+article p.right_aligned {
+  text-align: right;
+}
+
+
 
 sup a {
   text-decoration: none;
