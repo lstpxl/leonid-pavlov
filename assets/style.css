@@ -240,7 +240,7 @@ article.verse {
   /* margin-left: 0.2em; */
   /* margin-right: 0.2em; */
   min-height: 1em;
-  padding: 2em;
+  padding: 1em;
   min-width: max-content;
   width: 100%;
   /* min-width: max(max-content, 600px); */
@@ -254,6 +254,7 @@ article.record {
 @media only screen and (min-width: 825px) {
   article.verse {
     width: 400px;
+    padding: 2em;
   }
   article.record {
     min-width: 500px; 
