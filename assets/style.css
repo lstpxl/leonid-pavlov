@@ -106,11 +106,8 @@ h6 {
   #root {
     margin-left: 1em;
     margin-right: 1em;
-    /* max-width: 900px; */
     min-width: clamp(768px, 80%, 900px);
-    /* min-width: 768px; */
     max-width: clamp(768px, 80%, 900px);
-    /* width: clamp(768px, 80%, 900px); */
   }
 }
 
@@ -223,7 +220,6 @@ main {
   align-items: center;
 
   color: var(--smoky_black);
-  /* background-color: var(--alabaster); */
   background-color: var(--ash_gray_half);
   border-radius: 0.125em;
   box-shadow: 0 0.125em 0.2em 0 var(--smoky_black);
@@ -269,33 +265,21 @@ main {
 
 article {
   text-align: left;
-  /* max-width: 90vw; */
-  
 }
 
 article.verse {
   font-size: 1.25rem;
   min-height: 1em;
-  /* padding: 1em; */
-  /* min-width: max-content; */
-  /* max-width: calc(100% - 2em); */
   width: max-content;
   max-width: 90vw;
 }
 
 article.record {
   min-width: 300px; 
-  /* padding-top: 0.5em; */
-  /* padding-bottom: 0.5em; */
   width: 100%;
 }
 
 @media only screen and (min-width: 825px) {
-
-  article.verse {
-    
-    /* padding: 2em; */
-  }
   article.record {
     min-width: 500px; 
   }
@@ -312,8 +296,6 @@ article h1 {
 
 @media only screen and (min-width: 825px) {
   article h1 {
-    /* max-width: 18em; */
-    /* max-width: 450px; */
     max-width: 32ch;
   }
 }
@@ -341,12 +323,6 @@ article.verse h1.margin_bottom_2em {
 article.verse p {
   margin-top: 1em;
   margin-bottom: 1em;
-}
-
-@media only screen and (min-width: 825px) {
-  article.verse {
-    /* padding-left: 2em; */
-  }
 }
 
 article.verse .date {
@@ -422,8 +398,6 @@ article.verse span.comment {
 /* --- Side ---------------------------------------------- */
 
 aside {
-  /* flex-shrink: 1; */
-  /* flex-grow: 1; */
   flex: 1;
 }
 
@@ -603,14 +577,11 @@ section + .couch .photocard {
 }
 
 article.about  {
-  /* margin-top: 2rem; */
-  /* max-width: 550px; */
   text-indent: 2em;
 }
 
 article.first {
   padding-top: 2em;
-  /* margin-right: 2em; */
 }
 
 article.about h1 {
