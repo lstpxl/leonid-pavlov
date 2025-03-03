@@ -2,7 +2,6 @@
   <section id="scroll_anchor" class="two_column">
     <h3>все стихи:</h3>
     <ol>
-      
       {{ range sort (where .Site.RegularPages "Section" "verses") "Title" }}
         <li>
           <a href="{{ .RelPermalink }}">{{ .Params.title | default .RelPermalink }}</a>

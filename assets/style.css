@@ -25,7 +25,7 @@ html {
 html {
   --sheet_of_paper_image: url("{{ .Site.BaseURL }}empty-page-v3.webp");
   --author_in_hat_image: url("{{ .Site.BaseURL }}hat-v3.webp");
-  --author_with_medal_image: url("{{ .Site.BaseURL }}medal.webp");
+  --author_with_medal_image: url("{{ .Site.BaseURL }}medal-v4.webp");
   --author_working_image: url("{{ .Site.BaseURL }}couch.webp");
 }
 
@@ -347,6 +347,12 @@ svg + h1 {
   margin-left: 3.5rem;
 }
 
+.record p.comment {
+  color: var(--ebony);
+  font-style: italic;
+  margin-left: 1.125em;
+}
+
 .record audio {
   width: 100%;
 }
@@ -486,7 +492,7 @@ ol li.active a:hover {
 
 .medal {
   --image_url: var(--author_with_medal_image);
-  --proportion: calc( 1358 / 1121 ) !important;
+  --proportion: calc( 1366 / 1131 ) !important;
   --use_width: 250px !important;
   height: calc( var(--proportion) * var(--use_width) - 4rem ) !important;
 }
@@ -498,6 +504,14 @@ ol li.active a:hover {
   --proportion: calc( 1217 / 1580 ) !important;
   --use_width: 320px !important;
   height: calc( var(--proportion) * var(--use_width) - 4rem ) !important;
+}
+
+section + .couch {
+  height: calc( var(--proportion) * var(--use_width) - 7rem ) !important;
+}
+
+section + .couch .photocard {
+  top: -1em;
 }
 
 .couch .photocard {
