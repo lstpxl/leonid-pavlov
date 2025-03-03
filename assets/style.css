@@ -24,10 +24,10 @@ html {
 }
 
 html {
-  --sheet_of_paper_image: url("{{ .Site.BaseURL }}empty-page-v3.webp");
-  --author_in_hat_image: url("{{ .Site.BaseURL }}hat-v3.webp");
-  --author_with_medal_image: url("{{ .Site.BaseURL }}medal-v4.webp");
-  --author_working_image: url("{{ .Site.BaseURL }}couch.webp");
+  --sheet_of_paper_image: url("{{ .Site.BaseURL }}yellow-paper.webp");
+  --author_in_hat_image: url("{{ .Site.BaseURL }}in-a-hat.webp");
+  --author_with_medal_image: url("{{ .Site.BaseURL }}in-a-uniform.webp");
+  --author_working_image: url("{{ .Site.BaseURL }}working-on-a-couch.webp");
 }
 
 html {
