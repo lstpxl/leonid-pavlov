@@ -368,7 +368,6 @@ h3 {
   margin-bottom: 1em;
   margin-left: 1em;
   font-size: 1.5rem;
-  /* color: var(--ash_gray); */
   color: var(--battleship_gray);
   font-weight: 700;
 }
@@ -436,90 +435,78 @@ ol li.active a:hover {
 
 /* --- About author ---------------------------------------------- */
 
-/* HAT -------------- */
-
-.hat_photo_box {
+.photo_box {
   width: 100%;
-  height: calc( 1045 / 811 * var(--hat_width) - 6.5em );
   position: relative;
   transition: ease-in-out 0.5s;
-  --hat_width: 250px;
+  --proportion: 1;
+  --use_width: 100px;
+  height: calc( var(--proportion) * var(--use_width) );
 }
 
-.hat_photo_sep {
-  background-position: right top;
-  background: var(--author_in_hat_image) no-repeat center center;
-  background-size: calc( var(--hat_width) ) calc( 1045 / 811 * var(--hat_width) );
-  width: calc( var(--hat_width) );
-  height: calc( 1045 / 811 * var(--hat_width) );
+.photocard {
+  background-image: var(--image_url);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: calc( var(--use_width) ) calc( var(--proportion) * var(--use_width) );
+  width: calc( var(--use_width) );
+  height: calc( var(--proportion) * var(--use_width) );
   position: absolute;
-  top: -1.5em;
+  top: 0;
   right: 50%;
   transform: translateX(50%);
   transition: ease-in-out 0.5s;
 }
 
+/* HAT -------------- */
+
+.hat {
+  --image_url: var(--author_in_hat_image);
+  --proportion: calc( 1045 / 811 ) !important;
+  --use_width: 250px !important;
+  height: calc( var(--proportion) * var(--use_width) - 6.5em ) !important;
+}
+
+.hat .photocard {
+  top: -1.5em;
+}
+
 @media only screen and (min-width: 825px) {
-  .hat_photo_sep {
+  .hat {
+    --use_width: 300px !important;
+  }
+  .hat .photocard {
     top: -2.5em;
     right: 10%;
     transform: none;
-  }
-  .hat_photo_box {
-    --hat_width: 300px;
-    height: calc( 1045 / 811 * var(--hat_width) - 8.5em );
   }
 }
 
 /* MEDAL -------------- */
 
-.medal_photo_box {
-  width: 100%;
-  height: calc(300px - 4em);
-  position: relative;
-}
-
-.medal_photo_sep {
-  background-position: right top;
-  background: var(--author_with_medal_image) no-repeat center center;
-  background-size: 248px 300px;
-  min-width: 248px;
-  min-height: 300px;
-  width: calc(248px + 2em);
-  height: calc(300px + 2em);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -35%);
+.medal {
+  --image_url: var(--author_with_medal_image);
+  --proportion: calc( 1358 / 1121 ) !important;
+  --use_width: 250px !important;
+  height: calc( var(--proportion) * var(--use_width) - 4rem ) !important;
 }
 
 /* COUCH -------------- */
 
-.couch_photo_box {
-  width: 100%;
-  position: relative;
-  --file_couch_w: 1580;
-  --file_couch_h: 1217;
-  --couch_ratio: calc( var(--file_couch_h) / var(--file_couch_w) );
-  --couch_width: 320px;
-  height: calc( var(--couch_ratio) * var(--couch_width) - 4em );
+.couch {
+  --image_url: var(--author_working_image);
+  --proportion: calc( 1217 / 1580 ) !important;
+  --use_width: 320px !important;
+  height: calc( var(--proportion) * var(--use_width) - 4rem ) !important;
 }
 
-.couch_photo_sep {
-  background: var(--author_working_image) no-repeat center center;
-  background-size: calc( var(--couch_width) ) calc( var(--couch_ratio) * var(--couch_width) );
-  width: calc( var(--couch_width) );
-  height: calc( var(--couch_ratio) * var(--couch_width) );
-  position: absolute;
-  bottom: -5em;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: ease-in-out 0.5s;
+.couch .photocard {
+  top: 1em;
 }
 
 @media only screen and (min-width: 825px) {
-  .couch_photo_box {
-    --couch_width: 600px;
+  .couch {
+    --use_width: 600px !important;
   }
 }
 
