@@ -1,14 +1,16 @@
 {{ define "main" }}
 <section id="scroll_anchor">
   <main>
-    <article class="record">
-      {{ partial "large-speaker-icon.html" . }}
-      <h1 class="margin_bottom_1em">{{ .Page.Title }}</h1>
-      <audio preload="auto" controls="" controlslist="nofullscreen nodownload">
-        <source src="{{ .Site.Params.RecordingsBaseUrl }}{{ .Page.Params.filename }}" type="audio/mpeg">Ваш браузер не поддерживает тэг audio.
-      </audio>
-      {{ .Content }}
-    </article>
+    <div class="sheet record_sheet">
+      <article class="record">
+        {{ partial "large-speaker-icon.html" . }}
+        <h1 class="margin_bottom_1em">{{ .Page.Title }}</h1>
+        <audio preload="auto" controls="" controlslist="nofullscreen nodownload">
+          <source src="{{ .Site.Params.RecordingsBaseUrl }}{{ .Page.Params.filename }}" type="audio/mpeg">Ваш браузер не поддерживает тэг audio.
+        </audio>
+        {{ .Content }}
+      </article>
+    </div>
   </main>
 </section>
 <section id="scroll_anchor" class="two_column">

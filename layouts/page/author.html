@@ -4,16 +4,20 @@
     <div class="photo_box hat">
       <div class="photocard" aria-label="Леонид Семёнович Павлов"></div>
     </div>
-    <article class="about first">
-      <div class="preface_container">
-        {{ partial "preface-grandson.html" . }}
-      </div>
-    </article>
-    <article class="about">
-      <div class="preface_container">
-        {{ partial "bio.html" . }}
-      </div>
-    </article>
+    <div class="sheet about_sheet">
+      <article class="about first">
+        {{/*  <div class="preface_container">  */}}
+          {{ partial "preface-grandson.html" . }}
+        {{/*  </div>  */}}
+      </article>
+    </div>
+    <div class="sheet about_sheet">
+      <article class="about">
+        {{/*  <div class="preface_container">  */}}
+          {{ partial "bio.html" . }}
+        {{/*  </div>  */}}
+      </article>
+    </div>
   </main>
 </section>
 {{ end }}

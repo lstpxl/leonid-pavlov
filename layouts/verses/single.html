@@ -1,7 +1,9 @@
 {{ define "main" }}
 <section id="scroll_anchor" class="sided">
   <main>
-    <article class="verse">{{ if and .Page.Title (not .Params.hidetitle) }}<h1>{{ .Page.Title }}</h1>{{ end }}{{ .Content }}{{ with .Page.Params.datesigned }}<p class="date">{{ . }}</p>{{ end }}</article>
+    <div class="sheet verse_sheet">
+      <article class="verse">{{ if and .Page.Title (not .Params.hidetitle) }}   <h1>{{ .Page.Title }}</h1>{{ end }}{{ .Content }}{{ with .Page.Params.datesigned }}<p class="date">{{ . }}</p>{{ end }}</article>
+    </div>
   </main>
   <aside>
     <h3>все стихи:</h3>
