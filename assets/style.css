@@ -114,69 +114,62 @@ h6 {
 /* --- Header ---------------------------------------------- */
 
 header {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: space-between;
-  flex-direction: column;
-  /* font-size: 50%; */
-}
-
-@media only screen and (min-width: 825px) {
-  header {
-    flex-direction: row;
-    gap: 3rem;
-  }
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1.5rem;
+  justify-items: center;
+  align-items: center;
 }
 
 header h2 {
-  /* background: url("{{ .Site.BaseURL }}header-bg.png") no-repeat top left; */
-  background: url("{{ .Site.BaseURL }}empty-page-v3.webp") no-repeat top left;
+  grid-column: span 3;
+  background: url("{{ .Site.BaseURL }}empty-page-v3.webp") no-repeat bottom center;
   background-size: 350px 256px;
-  background-repeat: no-repeat;
-  background-position: bottom right;
   width: 350px;
-  height: 70px;
+  height: 4rem;
   text-align: center;
-  padding-top: 1.4rem;
+  padding-top: 1.25rem;
   font-size: 1.25rem;
   font-weight: normal;
   color: var(--ebony);
 }
 
-nav {
-  display: flex;
-  gap: 1.5rem;
-  /* justify-content: flex-end; */
-  justify-content:center;
-  align-items: center;
-  /* margin-right: 0.5em; */
-  flex-grow: 1;
-}
-
 @media only screen and (min-width: 825px) {
-  nav {
-    justify-content: space-between;
-    font-size: 1.125rem;
+  header {
+    gap: 2rem;
+    grid-template-columns: auto auto auto auto;
+    justify-items: end;
+  }
+  header h2 {
+    grid-column: span 1;
+    justify-self: start;
   }
 }
 
-nav a {
-  background-repeat: no-repeat;
-  
+header a {
   color: var(--ash_gray);
   text-decoration: none;
   display: flex;
   gap: 0.6em;
+  
 }
-nav a svg {
+
+header a svg {
   fill: var(--ash_gray);
   margin-top: 0.25em;
 }
 
-nav a:hover {
+header a div {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+header a:hover {
   color: var(--alabaster);
 }
-nav a:hover svg {
+header a:hover svg {
   fill: var(--alabaster);
 }
 
