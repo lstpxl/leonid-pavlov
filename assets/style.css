@@ -23,10 +23,10 @@ html {
 }
 
 html {
-  --sheet_of_paper: url("{{ .Site.BaseURL }}empty-page-v3.webp");
-  --author_in_hat: url("{{ .Site.BaseURL }}hat-v3.webp");
-  --author_with_medal: url("{{ .Site.BaseURL }}medal.webp");
-  --author_working: url("{{ .Site.BaseURL }}couch.webp");
+  --sheet_of_paper_image: url("{{ .Site.BaseURL }}empty-page-v3.webp");
+  --author_in_hat_image: url("{{ .Site.BaseURL }}hat-v3.webp");
+  --author_with_medal_image: url("{{ .Site.BaseURL }}medal.webp");
+  --author_working_image: url("{{ .Site.BaseURL }}couch.webp");
 }
 
 html {
@@ -130,7 +130,7 @@ header {
 
 header h2 {
   grid-column: span 3;
-  background: var(--sheet_of_paper) no-repeat bottom center;
+  background: var(--sheet_of_paper_image) no-repeat bottom center;
   background-size: 350px 256px;
   width: 350px;
   height: 4rem;
@@ -146,7 +146,6 @@ header h2 {
     font-size: 1.125rem;
   }
 }
-
 
 @media only screen and (min-width: 825px) {
   header {
@@ -178,7 +177,6 @@ header a div {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 
 header a:hover {
   color: var(--alabaster);
@@ -450,7 +448,7 @@ ol li.active a:hover {
 
 .hat_photo_sep {
   background-position: right top;
-  background: var(--author_in_hat) no-repeat center center;
+  background: var(--author_in_hat_image) no-repeat center center;
   background-size: calc( var(--hat_width) ) calc( 1045 / 811 * var(--hat_width) );
   width: calc( var(--hat_width) );
   height: calc( 1045 / 811 * var(--hat_width) );
@@ -483,7 +481,7 @@ ol li.active a:hover {
 
 .medal_photo_sep {
   background-position: right top;
-  background: var(--author_with_medal) no-repeat center center;
+  background: var(--author_with_medal_image) no-repeat center center;
   background-size: 248px 300px;
   min-width: 248px;
   min-height: 300px;
@@ -508,7 +506,7 @@ ol li.active a:hover {
 }
 
 .couch_photo_sep {
-  background: var(--author_working) no-repeat center center;
+  background: var(--author_working_image) no-repeat center center;
   background-size: calc( var(--couch_width) ) calc( var(--couch_ratio) * var(--couch_width) );
   width: calc( var(--couch_width) );
   height: calc( var(--couch_ratio) * var(--couch_width) );
