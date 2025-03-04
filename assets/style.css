@@ -230,6 +230,11 @@ main {
   float: left;
 }
 
+.about_sheet:last-child {
+  margin-bottom: 0;
+}
+
+
 .about_sheet + .about_sheet {
   float: right;
 }
@@ -490,7 +495,7 @@ ol.gridly {
   display: grid;
   grid-template-columns: repeat(1, minmax(100px, 1fr));
   column-gap: 3rem;
-  row-gap: 0.5rem;
+  row-gap: 0.8rem;
   align-items: center;
   list-style-position: inside;
 }
@@ -500,6 +505,7 @@ ol.gridly {
     grid-auto-flow: column;
     grid-template-columns: repeat(2, minmax(100px, 1fr));
     grid-template-rows: repeat(var(--gridly_rows), 1.5rem);
+    row-gap: 0.5rem;
   }
 }
 
@@ -677,7 +683,10 @@ ol.gridly li:hover::before {
   --image_url: var(--author_with_medal_image);
   --proportion: calc(1366 / 1131) !important;
   --use_width: 250px !important;
-  height: calc(var(--proportion) * var(--use_width) - 4rem) !important;
+  height: calc(var(--proportion) * var(--use_width) - 0.5rem) !important;
+}
+.medal .photocard {
+  top: 1em;
 }
 
 /* COUCH -------------- */
@@ -686,7 +695,7 @@ ol.gridly li:hover::before {
   --image_url: var(--author_working_image);
   --proportion: calc(1217 / 1580) !important;
   --use_width: 320px !important;
-  height: calc(var(--proportion) * var(--use_width) - 4rem) !important;
+  height: calc(var(--proportion) * var(--use_width) - 1rem) !important;
 }
 
 section + .couch {
@@ -780,7 +789,7 @@ svg.author-icon {
 
 footer {
   font-size: 0.75rem;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
   margin-bottom: 1rem;
   color: var(--ebony);
   display: flex;
