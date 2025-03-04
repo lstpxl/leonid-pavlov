@@ -344,6 +344,12 @@ article.verse p {
   display: none;
 } */
 
+hr {
+  border: 0;
+  border-top: 2px dotted var(--battleship_gray);
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+}
 
 article.verse .date {
   color: var(--air_superiority_blue);
@@ -377,6 +383,11 @@ article.verse .book {
 article.verse .to {
   color: var(--gray_olive);
   font-style: italic;
+}
+article.verse h4 {
+  color: var(--gray_olive);
+  font-style: italic;
+  font-weight: normal;
 }
 article.verse div.quote {
   color: var(--ebony);
