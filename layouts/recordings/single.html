@@ -14,14 +14,8 @@
   </main>
 </section>
 <section id="scroll_anchor" class="two_column">
-  <aside>
     <h3>все записи:</h3>
-    <ol>
-      {{ range sort (where .Site.RegularPages "Section" "recordings") "Title" "asc" }}
-      <li class="{{ if eq .RelPermalink $.Page.RelPermalink }}active{{ end }}"><a href="{{ .Permalink }}">{{ .Params.title | default .RelPermalink }}</a></li>
-      {{ end }}
-    </ol>
-  </aside>
+    {{ partial "list-recordings.html" . }}
 </section>
 <div class="photo_box couch">
   <div class="photocard" aria-label="Леонид Семёнович Павлов"></div>

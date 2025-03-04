@@ -14,12 +14,16 @@ html {
   --black_olive: oklch(37% 0.0264 148);
   --gray_olive: oklch(55% 0.04 148);
   --smoky_black: oklch(17% 0.01 999);
+  --smoky_black_trans: oklch(17% 0.01 999 / 0.07);
   --alabaster: oklch(96% 0.01 99);
   --ash_gray: oklch(80% 0.015 99);
   --ash_gray_half: oklch(88% 0.015 99);
   --battleship_gray: oklch(65% 0.0175 99);
   --ebony: oklch(50% 0.02 99);
   --air_superiority_blue: oklch(60% 0.06 230);
+  --khaki_accent: oklch(85% 0.04 90);
+  --khaki: oklch(72% 0.04 90);
+  --khaki_dim: oklch(58% 0.04 90);
   --error_red: oklch(45% 0.16 30);
 }
 
@@ -93,7 +97,7 @@ h6 {
 #root {
   display: flex;
   flex-direction: column;
-  justify-content: stretch; 
+  justify-content: stretch;
   gap: 3em;
   margin-left: 0.5em;
   margin-right: 0.5em;
@@ -123,7 +127,6 @@ header {
   grid-gap: 1.5rem;
   justify-items: center;
   align-items: center;
-  
 }
 
 header h2 {
@@ -162,7 +165,6 @@ header a {
   text-decoration: none;
   display: flex;
   gap: 0.6em;
-  
 }
 
 header a svg {
@@ -185,7 +187,6 @@ header a:hover svg {
 
 /* --- Middle section ---------------------------------------------- */
 
-
 section {
   position: relative;
 }
@@ -193,7 +194,7 @@ section {
 section.sided {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;;
+  gap: 1.5rem;
 }
 
 @media only screen and (min-width: 825px) {
@@ -227,11 +228,10 @@ main {
   padding: 1em;
 
   width: 100%;
-  
 }
 
 .record_sheet {
-  min-width: 300px; 
+  min-width: 300px;
   padding: 0.5em 1em !important;
 }
 
@@ -275,13 +275,13 @@ article.verse {
 }
 
 article.record {
-  min-width: 300px; 
+  min-width: 300px;
   width: 100%;
 }
 
 @media only screen and (min-width: 825px) {
   article.record {
-    min-width: 500px; 
+    min-width: 500px;
   }
 }
 
@@ -311,10 +311,6 @@ article.verse pre {
 article.verse pre + p {
   margin-top: 0;
 }
-/* article.verse p:has(+ pre) {
-  margin-bottom: 0;
-} */
-
 
 code {
   display: none;
@@ -331,20 +327,9 @@ article.verse h1.margin_bottom_2em {
 article.verse p {
   margin-top: 1em;
   margin-bottom: 1em;
-  /* white-space: pre-line; */
 }
 
-/* br:empty {
-
-  display: none;
-  color: red;
-} */
-
-/* br:empty + br {
-  display: none;
-} */
-
-hr {
+article hr {
   border: 0;
   border-top: 2px dotted var(--battleship_gray);
   margin-top: 1.2em;
@@ -451,17 +436,11 @@ ol {
   padding-inline-start: 0;
 }
 
-.two_column ol {
-  column-count: 1;
-  column-gap: 1em;
-}
-
 @media only screen and (min-width: 825px) {
   ol {
     font-size: 0.875rem;
   }
   .two_column ol {
-    column-count: 2;
     font-size: 1rem;
   }
 }
@@ -484,21 +463,170 @@ ol li a {
   color: var(--ash_gray);
   text-decoration: none;
 }
+.two_column hr {
+  border: 0;
+  border-top: 2px dotted var(--battleship_gray);
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+  width: 100%;
+}
+ol.special li a {
+  color: var(--air_superiority_blue);
+  text-decoration: none;
+}
+ol li a span {
+  color: var(--battleship_gray);
+}
 ol li.active {
   background-color: var(--ash_gray);
   border-radius: 0.125em;
-  padding: 0.3em 2em 0.3em 4em;
-  margin-top: 0.3em;
-  margin-bottom: 0.3em;
+  padding: 0.3em 0em 0.3em 4em;
 }
 ol li.active a {
   color: var(--smoky_black);
 }
 ol li a:hover {
-  color: var(--alabaster);
+  color: var(--ash_gray);
 }
 ol li.active a:hover {
   color: var(--smoky_black);
+}
+
+/* --- GRID LIST ---------------------------------------------- */
+
+ol.gridly {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(100px, 1fr));
+  column-gap: 3rem;
+  row-gap: 0.5rem;
+  align-items: center;
+  list-style-position: inside;
+}
+
+@media only screen and (min-width: 825px) {
+  ol.gridly {
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-template-rows: repeat(var(--gridly_rows), 1.5rem);
+  }
+}
+
+aside ol.gridly {
+  grid-auto-flow: row;
+  grid-template-columns: repeat(1, minmax(100px, 1fr)) !important;
+  grid-template-rows: repeat(auto-fill, 1.5rem) !important;
+}
+
+ol.gridly li {
+  max-width: 100%;
+  counter-increment: custom-counter;
+  position: relative;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+ol.gridly li.divider {
+  counter-set: custom-counter 0;
+  padding-left: 3rem;
+  padding-right: 0.5rem;
+}
+ol.gridly li.divider::before {
+  content: "";
+}
+
+ol.gridly li::before {
+  content: counter(custom-counter) ". ";
+  position: absolute;
+  left: 0;
+  text-align: right;
+  width: 2.4em;
+  color: var(--battleship_gray);
+}
+
+ol.gridly li:hover::before {
+  color: var(--ash_gray);
+}
+ol.gridly li.active:hover::before {
+  color: var(--battleship_gray);
+}
+
+ol.gridly li.special::before {
+  color: var(--khaki_dim);
+}
+ol.gridly li.special:hover::before {
+  color: var(--khaki);
+}
+
+ol.gridly li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  gap: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  cursor: pointer;
+  position: relative;
+  padding-left: 3.2rem;
+}
+
+ol.gridly li.active a {
+  cursor: not-allowed;
+}
+
+ol.gridly li div {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+ol.gridly span {
+  color: inherit;
+  color: var(--battleship_gray);
+  margin-right: 0.5rem;
+}
+ol.gridly li:hover a span {
+  color: var(--ash_gray);
+}
+ol.gridly li.active:hover a span {
+  color: var(--battleship_gray);
+}
+ol.gridly li.special div {
+  color: var(--khaki);
+}
+ol.gridly li.special:hover div {
+  color: var(--khaki_accent);
+}
+ol.gridly li.special.active div {
+  color: var(--smoky_black);
+}
+ol.gridly li.special.active:hover span {
+  color: var(--khaki_dim);
+}
+ol.gridly li.special.active:hover::before {
+  color: var(--khaki_dim);
+}
+ol.gridly li.special span {
+  color: var(--khaki_dim);
+}
+ol.gridly li.special:hover a span {
+  color: var(--khaki);
+}
+
+ol.gridly li:hover a {
+  color: var(--alabaster);
+}
+ol.gridly li.special:hover a {
+  color: var(--khaki_accent);
+}
+ol.gridly li.active:hover a {
+  color: var(--smoky_black);
+}
+
+ol.gridly li:hover::before {
+  color: var(--ash_gray);
 }
 
 /* --- About author ---------------------------------------------- */
@@ -509,16 +637,17 @@ ol li.active a:hover {
   transition: ease-in-out 0.5s;
   --proportion: 1;
   --use_width: 100px;
-  height: calc( var(--proportion) * var(--use_width) );
+  height: calc(var(--proportion) * var(--use_width));
 }
 
 .photocard {
   background-image: var(--image_url);
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: calc( var(--use_width) ) calc( var(--proportion) * var(--use_width) );
-  width: calc( var(--use_width) );
-  height: calc( var(--proportion) * var(--use_width) );
+  background-size: calc(var(--use_width))
+    calc(var(--proportion) * var(--use_width));
+  width: calc(var(--use_width));
+  height: calc(var(--proportion) * var(--use_width));
   position: absolute;
   top: 0;
   right: 50%;
@@ -530,9 +659,9 @@ ol li.active a:hover {
 
 .hat {
   --image_url: var(--author_in_hat_image);
-  --proportion: calc( 1045 / 811 ) !important;
+  --proportion: calc(1045 / 811) !important;
   --use_width: 250px !important;
-  height: calc( var(--proportion) * var(--use_width) - 5em ) !important;
+  height: calc(var(--proportion) * var(--use_width) - 5em) !important;
 }
 
 .hat .photocard {
@@ -554,22 +683,22 @@ ol li.active a:hover {
 
 .medal {
   --image_url: var(--author_with_medal_image);
-  --proportion: calc( 1366 / 1131 ) !important;
+  --proportion: calc(1366 / 1131) !important;
   --use_width: 250px !important;
-  height: calc( var(--proportion) * var(--use_width) - 4rem ) !important;
+  height: calc(var(--proportion) * var(--use_width) - 4rem) !important;
 }
 
 /* COUCH -------------- */
 
 .couch {
   --image_url: var(--author_working_image);
-  --proportion: calc( 1217 / 1580 ) !important;
+  --proportion: calc(1217 / 1580) !important;
   --use_width: 320px !important;
-  height: calc( var(--proportion) * var(--use_width) - 4rem ) !important;
+  height: calc(var(--proportion) * var(--use_width) - 4rem) !important;
 }
 
 section + .couch {
-  height: calc( var(--proportion) * var(--use_width) - 7rem ) !important;
+  height: calc(var(--proportion) * var(--use_width) - 7rem) !important;
 }
 
 section + .couch .photocard {
@@ -607,7 +736,7 @@ section + .couch .photocard {
   }
 }
 
-article.about  {
+article.about {
   text-indent: 2em;
 }
 
