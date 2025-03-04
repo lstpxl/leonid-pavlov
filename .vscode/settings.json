@@ -1,3 +1,13 @@
 {
-  "editor.formatOnSave": false
+  "editor.formatOnSave": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "biome.enable": true,
+  "yaml.schemas": {
+    "https://json.schemastore.org/yaml": "config.yaml"
+  }
 }
