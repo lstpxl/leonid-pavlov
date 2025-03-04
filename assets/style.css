@@ -289,6 +289,10 @@ article h1 {
   }
 }
 
+article h4 {
+  max-width: 40ch;
+}
+
 article.verse pre {
   display: none;
 }
@@ -363,6 +367,9 @@ article.verse div.quote {
   color: var(--ebony);
   padding-left: 1em;
   border-left: 1pt solid var(--smoky_black);
+}
+article em {
+  font-style: italic;
 }
 
 .record svg {
