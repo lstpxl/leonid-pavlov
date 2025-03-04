@@ -16,6 +16,9 @@
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
+  "[css]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
   "yaml.schemas": {
     "https://json.schemastore.org/yaml": "config.yaml"
   },

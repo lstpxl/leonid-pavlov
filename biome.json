@@ -9,7 +9,7 @@
     "ignoreUnknown": true,
     "ignore": [],
     "include": [
-      "assets/*.ccs",
+      "assets/*.css",
       "layouts/**/*.html",
       "content/**/*.md",
       ".vscode/*.json"
