@@ -35,8 +35,6 @@ html {
 }
 
 html {
-  /* font-size: 87.5%; */
-  /* 1rem = 10px; 10px/16px = 62.5% */
   font-family: "Playfair", serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -66,7 +64,6 @@ svg {
   display: block;
   max-width: 100%;
 }
-
 
 p,
 h1,
@@ -234,7 +231,6 @@ main {
   margin-bottom: 0;
 }
 
-
 .about_sheet + .about_sheet {
   float: right;
 }
@@ -343,22 +339,12 @@ article.verse p.comment {
   font-style: italic;
   margin-left: 1.125em;
 }
-/* article.verse .authorcomment {
-  color: var(--ebony);
-  font-style: italic;
-  margin-left: 1.125em;
-} */
+
 article.verse .footer {
   color: var(--black_olive);
   font-style: italic;
 }
-/* article.verse .hidden {
-  display: none;
-} */
-/* article.verse .book {
-  color: var(--ebony);
-  font-style: italic;
-} */
+
 article.verse .to {
   color: var(--gray_olive);
   font-style: italic;
@@ -683,7 +669,7 @@ ol.gridly li:hover::before {
   --image_url: var(--author_with_medal_image);
   --proportion: calc(1366 / 1131) !important;
   --use_width: 250px !important;
-  height: calc(var(--proportion) * var(--use_width) - 0.5rem) !important;
+  height: calc(var(--proportion) * var(--use_width) - 1rem) !important;
 }
 .medal .photocard {
   top: 1em;
@@ -695,11 +681,11 @@ ol.gridly li:hover::before {
   --image_url: var(--author_working_image);
   --proportion: calc(1217 / 1580) !important;
   --use_width: 320px !important;
-  height: calc(var(--proportion) * var(--use_width) - 1rem) !important;
+  height: calc(var(--proportion) * var(--use_width) - 0rem) !important;
 }
 
 section + .couch {
-  height: calc(var(--proportion) * var(--use_width) - 7rem) !important;
+  height: calc(var(--proportion) * var(--use_width) - 4rem) !important;
 }
 
 section + .couch .photocard {
@@ -717,25 +703,6 @@ section + .couch .photocard {
 }
 
 /* ABOUT TEXT -------------- */
-
-/* .preface_container {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-}
-
-.preface_container p {
-  text-indent: 2em;
-} */
-
-@media only screen and (min-width: 825px) {
-/*   .author_container {
-    padding-left: 1em;
-  } */
-/*   .preface_container {
-    padding-left: 1em;
-    padding-right: 1em;
-  } */
-}
 
 article.about {
   text-indent: 2em;
@@ -789,7 +756,6 @@ svg.author-icon {
 
 footer {
   font-size: 0.75rem;
-  /* margin-top: 3rem; */
   margin-bottom: 1rem;
   color: var(--ebony);
   display: flex;
