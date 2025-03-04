@@ -1,7 +1,6 @@
 {
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "purify-css": "^1.2.5"
+    "@biomejs/biome": "^1.9.4"
   },
   "dependencies": {
     "markdownlint-cli": "^0.44.0"
