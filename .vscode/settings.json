@@ -1,13 +1,50 @@
 {
+  "eslint.enable": false,
   "editor.formatOnSave": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "biomejs.biome"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-  "biome.enable": true,
   "yaml.schemas": {
     "https://json.schemastore.org/yaml": "config.yaml"
+  },
+  "[markdown]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "markup.inline.raw.string.markdown",
+        "settings": {
+          "foreground": "#aaff00"
+        }
+      },
+      {
+        "scope": "markup.fenced_code.block.markdown",
+        "settings": {
+          "foreground": "#00ffbf"
+        }
+      }
+    ]
   }
 }
