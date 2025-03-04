@@ -1,6 +1,7 @@
 {
-  "MD033": {"allowed_elements": ["p"]},
+  "MD033": {"allowed_elements": ["p", "div", "span", "sup", "a"]},
   "MD040": false,
   "MD031": false,
-  "MD013": false
+  "MD013": false,
+  "MD026": false
 }
