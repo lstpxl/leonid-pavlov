@@ -62,21 +62,11 @@ body {
   background-color: var(--black_olive);
 }
 
-img,
-picture,
-video,
-canvas,
 svg {
   display: block;
   max-width: 100%;
 }
 
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
 
 p,
 h1,
@@ -89,8 +79,7 @@ h6 {
   font-size: 100%;
 }
 
-#root,
-#__next {
+#root {
   isolation: isolate;
 }
 
@@ -300,10 +289,6 @@ article h1 {
   }
 }
 
-h1.error {
-  color: var(--error_red) !important;
-}
-
 article.verse pre {
   display: none;
 }
@@ -349,22 +334,22 @@ article.verse p.comment {
   font-style: italic;
   margin-left: 1.125em;
 }
-article.verse .authorcomment {
+/* article.verse .authorcomment {
   color: var(--ebony);
   font-style: italic;
   margin-left: 1.125em;
-}
+} */
 article.verse .footer {
   color: var(--black_olive);
   font-style: italic;
 }
-article.verse .hidden {
+/* article.verse .hidden {
   display: none;
-}
-article.verse .book {
+} */
+/* article.verse .book {
   color: var(--ebony);
   font-style: italic;
-}
+} */
 article.verse .to {
   color: var(--gray_olive);
   font-style: italic;
@@ -717,23 +702,23 @@ section + .couch .photocard {
 
 /* ABOUT TEXT -------------- */
 
-.preface_container {
+/* .preface_container {
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
 
 .preface_container p {
   text-indent: 2em;
-}
+} */
 
 @media only screen and (min-width: 825px) {
-  .author_container {
+/*   .author_container {
     padding-left: 1em;
-  }
-  .preface_container {
+  } */
+/*   .preface_container {
     padding-left: 1em;
     padding-right: 1em;
-  }
+  } */
 }
 
 article.about {
