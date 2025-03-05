@@ -1,6 +1,6 @@
 <header>
   <h2>Стихи Леонида Павлова</h2>
-  <a href="{{ .Site.BaseURL }}author" data-discover="true" aria-current="page"><svg width="1em" height="1em"
+  <a class="{{ if eq .RelPermalink "/" }}active{{ end }}" href="{{ .Site.BaseURL }}author" data-discover="true" aria-current="page"><svg width="1em" height="1em"
       stroke="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <title>об авторе</title>
       <g>
@@ -10,7 +10,7 @@
       </g>
     </svg>
     <div>об авторе</div>
-  </a><a href="{{ .Site.BaseURL }}verses" data-discover="true"><svg width="1em" height="1em" stroke="none"
+  </a><a class="{{ if in .RelPermalink "/verses/" }}active{{ end }}" href="{{ .Site.BaseURL }}verses" data-discover="true"><svg width="1em" height="1em" stroke="none"
       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
       <title>стихи</title>
       <g>
@@ -20,7 +20,7 @@
       </g>
     </svg>
     <div>стихи</div>
-  </a><a href="{{ .Site.BaseURL }}recordings" data-discover="true"><svg width="1em" height="1em" stroke="none"
+  </a><a class="{{ if in .RelPermalink "/recordings/" }}active{{ end }}" href="{{ .Site.BaseURL }}recordings" data-discover="true"><svg width="1em" height="1em" stroke="none"
       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
       <title>аудиозаписи</title>
       <g>

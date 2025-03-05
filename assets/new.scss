@@ -123,6 +123,7 @@ header {
     text-decoration: none;
     display: flex;
     gap: 0.6em;
+    cursor: pointer;
 
     svg {
       fill: var(--ash-gray);
@@ -133,6 +134,26 @@ header {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    &.active {
+      cursor: default;
+
+      div {
+        color: var(--battleship-gray);
+      }
+
+      svg {
+        fill: var(--battleship-gray);
+      }
+
+      &:hover {
+        color: var(--battleship-gray);
+
+        svg {
+          fill: var(--battleship-gray);
+        }
+      }
     }
 
     &:hover {
