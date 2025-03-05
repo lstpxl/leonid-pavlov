@@ -1,12 +1,12 @@
-– En dash (-- in Markdown)
-— Em dash (--- in Markdown)
-… Ellipsis
+– En dash (-- in Markdown) or --
+— Em dash (--- in Markdown) or ---
+… Ellipsis or ...
 <!-- До исправления автором: -->
 <!-- Исправление автора:  -->
 <!-- Вариант автора:  -->
 <!-- Вариант автора, книжка 5:  -->
 <!-- Вариант автора, старый:  -->
-<p class="to"></p>
+<p class="to"></p> or ####
 
 А́ /* Combining acute accent */
 &#x301; /* Combining acute accent */
