@@ -17,10 +17,17 @@ def replace_e_with_yo(text):
 
 def process_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
-        content = file.read()
-    new_content = replace_e_with_yo(content)
+        lines = file.readlines()
+    
+    new_lines = []
+    for line in lines:
+        new_line = replace_e_with_yo(line)
+        if new_line != line:
+            print(f"Changed line: {new_line.strip()}")
+        new_lines.append(new_line + '\n')
+    
     with open(file_path, 'w', encoding='utf-8') as file:
-        file.write(new_content)
+        file.writelines(new_lines)
 
 def process_folder(folder_path):
     for root, _, files in os.walk(folder_path):
