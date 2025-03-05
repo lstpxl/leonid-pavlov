@@ -4,7 +4,7 @@ import pymorphy2
 morph = pymorphy2.MorphAnalyzer()
 
 def replace_e_with_yo(text):
-    words = text.split()
+    words = text.split(' ')
     new_words = []
     for word in words:
         parsed_word = morph.parse(word)[0]
@@ -21,8 +21,8 @@ def process_file(file_path):
     
     new_lines = []
     for line in lines:
-        new_line = replace_e_with_yo(line)
-        if new_line != line:
+        new_line = replace_e_with_yo(line.rstrip())
+        if new_line != line.rstrip():
             print(f"Changed line: {new_line.strip()}")
         new_lines.append(new_line + '\n')
     
