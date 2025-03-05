@@ -1,5 +1,5 @@
-– En dash
-— Em dash
+– En dash (-- in Markdown)
+— Em dash (--- in Markdown)
 … Ellipsis
 <!-- До исправления автором: -->
 <!-- Исправление автора:  -->
@@ -14,3 +14,6 @@
 “” Typographic quotes (informally "66 and 99")
 «...» Primary russian quotes
 „...“ Secondary russian quotes
+
+More extensions in Hugo:
+https://gohugo.io/configuration/markup/#typographer

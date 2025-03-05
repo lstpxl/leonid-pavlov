@@ -1,5 +1,5 @@
 languageCode = 'ru'
-title = 'Стихи - Леонид Павлов'
+title = 'Стихи Леонида Павлова'
 disableKinds = ['taxonomy', 'term']
 [params]
   RecordingsBaseUrl = 'https://pavlov.photography/leonid-pavlov/audio-aac/'
@@ -11,6 +11,8 @@ disableKinds = ['taxonomy', 'term']
       hardWraps = true
       unsafe = true
     [markup.goldmark.extensions]
+      [markup.goldmark.extensions.typographer]
+        disable = false
       [markup.goldmark.extensions.passthrough]
         enable = true
         [markup.goldmark.extensions.passthrough.delimiters]
