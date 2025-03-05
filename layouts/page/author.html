@@ -6,12 +6,18 @@
     </div>
     <div class="sheet">
       <article class="about">
-        {{ partial "preface-grandson.html" . }}
+        {{/*  {{ partial "preface-grandson.html" . }}  */}}
+        {{ with .Site.GetPage "preface.md" }}
+          {{ .Content }}
+        {{ end }}
       </article>
     </div>
     <div class="sheet">
       <article class="about">
-        {{ partial "bio.html" . }}
+        {{/*  {{ partial "bio.html" . }}  */}}
+        {{ with .Site.GetPage "bio.md" }}
+          {{ .Content }}
+        {{ end }}
       </article>
     </div>
   </main>

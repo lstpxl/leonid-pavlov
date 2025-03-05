@@ -604,6 +604,10 @@ ol.gridly {
       transform: none;
     }
   }
+
+  & + .sheet {
+    padding-top: 4em !important;
+  }
 }
 
 /* MEDAL -------------- */
@@ -649,9 +653,9 @@ ol.gridly {
 article.about {
   text-indent: 2em;
 
-  &:first-of-type {
-    padding-top: 2em;
-  }
+  // &:first-of-type {
+  //   padding-top: 2em;
+  // }
 
   h1 {
     font-size: 1.75rem;
