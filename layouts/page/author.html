@@ -1,21 +1,17 @@
 {{ define "main" }}
 <section id="scroll_anchor" class="author">
   <main>
-    <div class="photo_box hat">
+    <div class="photo-box hat">
       <div class="photocard" aria-label="Леонид Семёнович Павлов"></div>
     </div>
-    <div class="sheet about_sheet">
-      <article class="about first">
-        {{/*  <div class="preface_container">  */}}
-          {{ partial "preface-grandson.html" . }}
-        {{/*  </div>  */}}
+    <div class="sheet">
+      <article class="about">
+        {{ partial "preface-grandson.html" . }}
       </article>
     </div>
-    <div class="sheet about_sheet">
+    <div class="sheet">
       <article class="about">
-        {{/*  <div class="preface_container">  */}}
-          {{ partial "bio.html" . }}
-        {{/*  </div>  */}}
+        {{ partial "bio.html" . }}
       </article>
     </div>
   </main>

@@ -15,17 +15,17 @@
 {{ end }}
 {{ $sorted_base_list := sort $base_list "title" "asc" }}
 {{ $sorted_special_list := sort $special_list "path" "asc" }}
-<style>.gridly { --gridly_rows: {{ $rows }}; }</style>
+<style>.gridly { --gridly-rows: {{ $rows }}; }</style>
 <ol class="gridly" id="gridly">
   {{ range $sorted_base_list }}
     <li class="{{ if eq $.Page.RelPermalink .rel }}active{{ end }}">
-      <a class="" href="{{ .permalink }}"><div>{{ .title }}</div><span>{{ .length }}</span></a>
+      <a href="{{ .permalink }}"><div>{{ .title }}</div><span>{{ .length }}</span></a>
     </li>
   {{ end }}
 <li class="divider"><hr/></li>  
   {{ range $sorted_special_list }}
     <li class="special {{ if eq $.Page.RelPermalink .rel }}active{{ end }}">
-      <a class="" href="{{ .permalink }}"><div>{{ .title }}</div><span>{{ .length }}</span></a>
+      <a href="{{ .permalink }}"><div>{{ .title }}</div><span>{{ .length }}</span></a>
     </li>
   {{ end }}
 </ol>

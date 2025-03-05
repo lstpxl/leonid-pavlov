@@ -7,7 +7,7 @@
   {{ $base_list = append $base_list $item }}
 {{ end }}
 {{ $sorted_base_list := sort $base_list "title" "asc" }}
-<style>.gridly { --gridly_rows: {{ $rows }}; }</style>
+<style>.gridly { --gridly-rows: {{ $rows }}; }</style>
 <ol class="gridly" id="gridly">
   {{ range $sorted_base_list }}
     <li class="{{ if eq $.Page.RelPermalink .rel }}active{{ end }}">
