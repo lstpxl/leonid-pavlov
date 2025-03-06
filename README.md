@@ -1,4 +1,6 @@
 # Архив стихотворений Павлова Леонида Семёновича
 
-Published at [Github Pages](https://lstpxl.github.io/leonid-pavlov/)
-Built using [Hugo](https://gohugo.io)
+Публикуется на [Github Pages](https://lstpxl.github.io/leonid-pavlov/)
+Построен с помощью [Hugo](https://gohugo.io)
+Исходный текст стихотворений в разметке Markdown
+Аудиозаписи отреставрированы в 2005 году, очищены с использованием ИИ  [Adobe Enhance Speech v2](https://podcast.adobe.com/enhance)
