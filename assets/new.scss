@@ -42,6 +42,8 @@ body {
   justify-content: center;
   color: var(--battleship-gray);
   background-color: var(--black-olive);
+  height: 100%;
+  margin: 0;
 }
 
 svg {
@@ -60,15 +62,14 @@ h6 {
   font-size: 100%;
 }
 
-#root {
-  isolation: isolate;
+#wrapper {
+  // min-height: calc(100vh - 2rem);
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
-  gap: 3em;
+  gap: 3rem;
   margin-left: 0.5em;
   margin-right: 0.5em;
-  min-height: 100dvh;
+  min-height: 100vh;
   min-width: 70%;
   max-width: clamp(768px, 90%, 98%);
 
@@ -78,6 +79,15 @@ h6 {
     min-width: clamp(768px, 80%, 900px);
     max-width: clamp(768px, 80%, 900px);
   }
+}
+
+#root {
+  isolation: isolate;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  gap: 3em;
 }
 
 a {
@@ -180,6 +190,7 @@ header {
 
 section {
   position: relative;
+  flex-grow: 1;
 
   &.sided {
     display: flex;

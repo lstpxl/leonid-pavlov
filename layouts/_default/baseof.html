@@ -2,9 +2,11 @@
 <html lang="ru">
 {{ partial "head.html" . }}
 <body>
-  <div id="root">
-    {{ partial "header.html" . }}
-    {{ block "main" . }}{{ end }}
+  <div id="wrapper">
+    <div id="root">
+      {{ partial "header.html" . }}
+      {{ block "main" . }}{{ end }}
+    </div>
     {{ partial "footer.html" . }}
   </div>
 </body>
