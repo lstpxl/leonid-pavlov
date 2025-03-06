@@ -9,7 +9,7 @@ disableKinds = ['taxonomy', 'term']
   [markup.goldmark]
     [markup.goldmark.renderer]
       hardWraps = true
-      unsafe = true
+      unsafe = false
     [markup.goldmark.extensions]
       footnote = true
       [markup.goldmark.extensions.typographer]
