@@ -2,7 +2,9 @@
 <section id="scroll_anchor" class="sided">
   <main>
     <div class="sheet verse-sheet">
-      <article class="verse">{{ if and .Page.Title (not .Params.hidetitle) }}   <h1>{{ .Page.Title }}</h1>{{ end }}{{ .Content }}{{ with .Page.Params.datesigned }}<p class="date">{{ . }}</p>{{ end }}</article>
+      <article class="verse">{{ if and .Page.Title (not .Params.hidetitle) }}   <h1>{{ .Page.Title }}</h1>{{ end }}
+      {{ .Content }}{{ if (not .Params.hidedate) }}{{ $datesigned := ( .Page.Params.datesigned | default "" ) }}{{ if ne $datesigned "" }}<p class="date">{{ $datesigned }}</p>{{ end }}{{ end }}
+      </article>
     </div>
   </main>
   <aside>

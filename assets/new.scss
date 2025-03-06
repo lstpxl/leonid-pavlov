@@ -6,6 +6,7 @@ html {
   --smoky-black: oklch(17% 0.01 999);
   --alabaster: oklch(96% 0.01 99);
   --ash-gray-half: oklch(88% 0.015 99);
+  --ash-gray-quarter: oklch(84% 0.015 99);
   --ash-gray: oklch(80% 0.015 99);
   --battleship-gray: oklch(65% 0.0175 99);
   --ebony: oklch(50% 0.02 99);
@@ -13,6 +14,7 @@ html {
   --sahara-accent: oklch(85% 0.04 90);
   --sahara: oklch(72% 0.04 90);
   --sahara-dim: oklch(58% 0.04 90);
+  --error-red: oklch(53% 0.21 25);
   --sheet-of-paper-image: url("{{ .Site.BaseURL }}yellow-paper.webp");
   --author-in-hat-image: url("{{ .Site.BaseURL }}in-a-hat.webp");
   --author-with-medal-image: url("{{ .Site.BaseURL }}in-a-uniform.webp");
@@ -75,6 +77,14 @@ h6 {
     margin-right: 1em;
     min-width: clamp(768px, 80%, 900px);
     max-width: clamp(768px, 80%, 900px);
+  }
+}
+
+a {
+  color: var(--air-superiority-blue);
+
+  &:hover {
+    color: var(--black-olive);
   }
 }
 
@@ -261,7 +271,104 @@ article {
   }
 
   sup a {
+    // background-color: var(--ash-gray-quarter);
+    // color: (var(--air-superiority-blue));
     text-decoration: none;
+    padding: 0 0.2em;
+    border-radius: 0.2em;
+
+    &:hover {
+      color: var(--error-red);
+    }
+  }
+
+  .footnotes {
+    font-size: 1rem;
+    color: var(--ebony);
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: left;
+
+    ol {
+      padding-inline-start: 2em;
+
+      li {
+        max-width: 40ch;
+
+        p {
+          margin-top: 1em;
+          margin-bottom: 1em;
+        }
+
+        .footnote-backref {
+          display: none;
+          font-size: 0.8em;
+          color: var(--air-superiority-blue);
+          font-style: italic;
+          margin-left: 0.5em;
+        }
+      }
+    }
+  }
+
+  blockquote {
+    font-size: 87.5%;
+    color: var(--ebony);
+    padding-left: 1em;
+    border-left: 1pt solid var(--smoky-black);
+    margin-bottom: 1.5em;
+  }
+
+  hr {
+    border: 0;
+    border-top: 2px dotted var(--battleship-gray);
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+  }
+
+  &.about {
+    hr {
+      display: none;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      color: var(--ebony);
+      margin-top: 1em;
+    }
+
+    & > p {
+      text-indent: 2em;
+      font-size: 1.25rem;
+      color: var(--smoky-black);
+      margin-bottom: 0.3em;
+
+      
+    }
+
+    h2 {
+      text-align: right;
+      color: var(--battleship-gray);
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    ol {
+      li {
+        max-width: 100%;
+
+        p {
+          margin-top: 1em;
+          margin-bottom: 1em;
+        }
+      }
+    }
+  }
+
+  h4 {
+    color: var(--gray-olive);
+    font-style: italic;
+    font-weight: normal;
   }
 
   &.verse {
@@ -281,9 +388,24 @@ article {
     }
 
     h4 {
+      // to, dedication
       max-width: 40ch;
-      color: var(--gray-olive);
+    }
+
+    h5 {
+      // date signed
+      color: var(--air-superiority-blue);
       font-style: italic;
+      margin-top: 1em;
+      margin-right: 1em;
+      text-align: right;
+      font-weight: normal;
+    }
+
+    h6 {
+      // scriptum
+      margin-left: 10em;
+      margin-top: -0.75em;
       font-weight: normal;
     }
 
@@ -329,13 +451,6 @@ article {
       border-left: 1pt solid var(--smoky-black);
     }
 
-    hr {
-      border: 0;
-      border-top: 2px dotted var(--battleship-gray);
-      margin-top: 1.2em;
-      margin-bottom: 1.2em;
-    }
-
     code {
       display: none;
     }
@@ -357,6 +472,12 @@ article {
       min-width: 500px;
     }
 
+    p {
+      color: var(--ebony);
+      font-style: italic;
+      margin-left: 1.125em;
+    }
+
     svg {
       fill: var(--ash-gray);
       margin-top: 1.2rem;
@@ -369,11 +490,11 @@ article {
       }
     }
 
-    p.comment {
-      color: var(--ebony);
-      font-style: italic;
-      margin-left: 1.125em;
-    }
+    // p.comment {
+    //   color: var(--ebony);
+    //   font-style: italic;
+    //   margin-left: 1.125em;
+    // }
 
     audio {
       width: 100%;
@@ -666,42 +787,6 @@ ol.gridly {
 
   @media only screen and (min-width: 825px) {
     --use-width: 600px !important;
-  }
-}
-
-/* ABOUT TEXT -------------- */
-
-article.about {
-  text-indent: 2em;
-
-  // &:first-of-type {
-  //   padding-top: 2em;
-  // }
-
-  h1 {
-    font-size: 1.75rem;
-    color: var(--ebony);
-    margin-top: 1em;
-  }
-
-  p {
-    font-size: 1.25rem;
-    color: var(--smoky-black);
-    margin-bottom: 0.3em;
-
-    &.right-aligned {
-      text-align: right;
-      color: var(--battleship-gray);
-      font-size: 1rem;
-    }
-  }
-
-  a {
-    color: var(--air-superiority-blue);
-
-    &:hover {
-      color: var(--black-olive);
-    }
   }
 }
 
