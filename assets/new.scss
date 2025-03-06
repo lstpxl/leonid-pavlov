@@ -271,8 +271,6 @@ article {
   }
 
   sup a {
-    // background-color: var(--ash-gray-quarter);
-    // color: (var(--air-superiority-blue));
     text-decoration: none;
     padding: 0 0.2em;
     border-radius: 0.2em;
@@ -403,7 +401,7 @@ article {
     }
 
     h6 {
-      // scriptum
+      // scriptum, eg in verses/s39.md
       margin-left: 10em;
       margin-top: -0.75em;
       font-weight: normal;
@@ -489,12 +487,6 @@ article {
         margin-left: 3.5rem;
       }
     }
-
-    // p.comment {
-    //   color: var(--ebony);
-    //   font-style: italic;
-    //   margin-left: 1.125em;
-    // }
 
     audio {
       width: 100%;
@@ -775,14 +767,6 @@ ol.gridly {
 
   .photocard {
     top: 1rem;
-  }
-
-  & + section {
-    height: calc(var(--proportion) * var(--use-width) - 4rem) !important;
-
-    .photocard {
-      top: -1em;
-    }
   }
 
   @media only screen and (min-width: 825px) {
