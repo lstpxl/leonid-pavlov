@@ -766,6 +766,33 @@ ol.gridly {
   .photocard {
     top: 1em;
   }
+
+  @media only screen and (min-width: 825px) {
+    display: none;
+  }
+}
+
+.medal-inside {
+  --image-url: var(--author-with-medal-image);
+  --proportion: calc(1366 / 1131) !important;
+  --use-width: 250px !important;
+  height: calc(var(--proportion) * var(--use-width) - 0rem) !important;
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: none;
+  transition: ease-in-out 0.5s;
+  grid-column: 1 / 2;
+  grid-row: -7 / -1;
+  justify-self: center;
+  display: none;
+
+  @media only screen and (min-width: 825px) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 8;
+    display: block;
+    transform: translateY(-3rem);
+  }
 }
 
 /* COUCH -------------- */

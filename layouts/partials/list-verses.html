@@ -1,6 +1,16 @@
+{{ $displayPhoto := .displayPhoto }}
+{{ with .context }}
+
 {{ $verses := where .Site.RegularPages "Section" "verses" }}
 {{ $base_list := slice }}
-{{ $rows := math.Ceil ( div ( sub ($verses | len) 0.001 ) 2 ) }}
+{{ $item_num := ($verses | len) }}
+{{ if eq $displayPhoto true }}
+  {{ $item_num = add $item_num ( sub 8 1 ) }}
+{{ else }}
+  {{ $item_num = $item_num }}
+{{ end }}
+{{ $rows := math.Ceil ( div ( sub $item_num 0.001 ) 2 ) }}
+
 {{ range $verses }}
   {{ $title := ( .Params.title | default .RelPermalink ) }}
   {{ $item := slice ( dict "permalink" .Permalink "title" $title "path" .Path "rel" .RelPermalink ) }}
@@ -14,4 +24,8 @@
       <a class="" href="{{ .permalink }}"><div>{{ .title }}</div></a>
     </li>
   {{ end }}
+  {{ if eq $displayPhoto true }}
+  <div class="photocard medal-inside" aria-label="Леонид Семёнович Павлов"></div>
+  {{ end }}
 </ol>
+{{ end }}

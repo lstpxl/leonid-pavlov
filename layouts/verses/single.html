@@ -9,7 +9,7 @@
   </main>
   <aside>
     <h3>все стихи:</h3>
-    {{ partial "list-verses.html" . }}
+    {{ partial "list-verses.html" (dict "context" . "displayPhoto" false) }}
   </aside>
 </section>
 {{ end }}

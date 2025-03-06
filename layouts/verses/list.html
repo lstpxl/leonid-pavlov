@@ -1,7 +1,7 @@
 {{ define "main" }}
   <section id="scroll_anchor" class="two-column">
     <h3>все стихи:</h3>
-    {{ partial "list-verses.html" . }}
+    {{ partial "list-verses.html" (dict "context" . "displayPhoto" true) }}
     <div class="photo-box medal">
       <div class="photocard" aria-label="Леонид Семёнович Павлов"></div>
     </div>
