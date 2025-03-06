@@ -1,16 +1,17 @@
-– En dash (-- in Markdown) or --
-— Em dash (--- in Markdown) or ---
-… Ellipsis or ...
+-- En dash (in Markdown) or (–)
+--- Em dash (in Markdown) or (—)
+... Ellipsis or (…)
 <!-- До исправления автором: -->
 <!-- Исправление автора:  -->
 <!-- Исправление Ильи, было:  -->
 <!-- Вариант автора:  -->
 <!-- Вариант автора, книжка 5:  -->
 <!-- Вариант автора, старый:  -->
-<p class="to"></p> or ####
+#### or <p class="to"></p> - кому или посвящение
+##### or <p class="date"></p> - дата написания, под тектстом
 
-А́ /* Combining acute accent */
 &#x301; /* Combining acute accent */
+А́ /* Combining acute accent */
 ◌́  /* Combining acute accent */
 “” Typographic quotes (informally "66 and 99")
 «...» Primary russian quotes
