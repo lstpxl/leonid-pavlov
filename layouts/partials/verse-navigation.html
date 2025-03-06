@@ -1,0 +1,49 @@
+{{ $verses := where .Site.RegularPages "Section" "verses" }}
+{{ $base_list := slice }}
+{{ range $verses }}
+  {{ $title := ( .Params.title | default .RelPermalink ) }}
+  {{ $item := slice ( dict "permalink" .Permalink "title" $title "path" .Path "rel" .RelPermalink ) }}
+  {{ $base_list = append $base_list $item }}
+{{ end }}
+{{ $sorted_base_list := sort $base_list "title" "asc" }}
+{{ $prevIndex := 0 }}
+{{ $nextIndex := 0 }}
+{{ range $index, $element := $sorted_base_list }}
+  {{ if eq $.Page.Permalink $element.permalink }}
+    {{ if eq $index (sub (len $sorted_base_list) 1) }}
+      {{ $nextIndex = 0 }}
+    {{ else }}
+      {{ $nextIndex = add $index 1 }}
+    {{ end}}
+    {{ if eq $index 0 }}
+      {{ $prevIndex = (sub (len $sorted_base_list) 1) }}
+    {{ else }}
+      {{ $prevIndex = sub $index 1 }}
+    {{ end}}
+  {{ end }}
+{{ end }}
+{{ $foundItemNext := index $sorted_base_list $nextIndex }}
+{{ $foundItemPrev := index $sorted_base_list $prevIndex }}
+
+<nav>
+  <a href="{{ $foundItemPrev.permalink }}" title="предыдущее">
+    <svg width="2rem" height="2rem" stroke="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1.5 1.5">
+      <title>предыдущее</title>
+      <g>
+        <path d="M0.75,0.125C1.095,0.125 1.375,0.405 1.375,0.75C1.375,1.095 1.095,1.375 0.75,1.375C0.405,1.375 0.125,1.095 0.125,0.75C0.125,0.405 0.405,0.125 0.75,0.125ZM0.375,0.873L0.688,0.873L0.546,0.732C0.605,0.663 0.691,0.623 0.781,0.623C0.929,0.623 1.053,0.727 1.085,0.866L1.145,0.846C1.105,0.682 0.958,0.561 0.781,0.561C0.67,0.561 0.571,0.61 0.502,0.688L0.375,0.561L0.375,0.873Z" style="fill-rule:nonzero;"/>
+      </g>
+    </svg>
+  </a>
+
+  <a href="{{ $foundItemNext.permalink }}" title="следующее">
+    <svg width="2rem" height="2rem" stroke="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <title>следующее</title>
+      <g>
+        <path fill="none" d="M0 0h24v24H0z"></path>
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6 11.97h-5l2.26-2.26a4.94 4.94 0 0 0-3.76-1.74c-2.37 0-4.35 1.66-4.86 3.88l-.96-.32c.64-2.62 3-4.56 5.82-4.56 1.78 0 3.37.79 4.47 2.03L18 8.97v5z">
+        </path>
+      </g>
+    </svg>
+  </a>
+</nav>

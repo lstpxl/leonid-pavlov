@@ -207,6 +207,10 @@ section {
 
 main {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
 
   @media only screen and (min-width: 825px) {
     flex: 0 1 auto;
@@ -508,6 +512,43 @@ article {
     }
   }
 }
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0 0.5rem;
+
+  a {
+    font-size: 1rem;
+    color: var(--ebony);
+    display: flex;
+    gap: 0.6em;
+    cursor: pointer;
+    align-self: flex-end;
+  
+    svg {
+      fill: var(--ebony);
+      margin-top: 0.25em;
+    }
+  
+    div {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  
+    &:hover {
+      color: var(--battleship-gray);
+  
+      svg {
+        fill: var(--battleship-gray);
+      }
+    }
+  }
+}
+
+
 
 /* --- Side ---------------------------------------------- */
 

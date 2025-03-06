@@ -6,6 +6,7 @@
       {{ .Content }}{{ if (not .Params.hidedate) }}{{ $datesigned := ( .Page.Params.datesigned | default "" ) }}{{ if ne $datesigned "" }}<p class="date">{{ $datesigned }}</p>{{ end }}{{ end }}
       </article>
     </div>
+    {{ partial "verse-navigation.html" . }}
   </main>
   <aside>
     <h3>все стихи:</h3>
