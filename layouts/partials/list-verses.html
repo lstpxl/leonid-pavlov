@@ -20,7 +20,7 @@
 <style>.gridly { --gridly-rows: {{ $rows }}; }</style>
 <ol class="gridly" id="gridly">
   {{ range $sorted_base_list }}
-    <li class="{{ if eq $.Page.RelPermalink .rel }}active{{ end }}">
+    <li class="{{ if eq $.context.Page.RelPermalink .rel }}active{{ end }}">
       <a class="" href="{{ .permalink }}"><div>{{ .title }}</div></a>
     </li>
   {{ end }}
