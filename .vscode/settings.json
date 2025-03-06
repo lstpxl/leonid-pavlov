@@ -53,7 +53,20 @@
         "settings": {
           "foreground": "#00ffbf"
         }
+      },
+      {
+        "scope": "punctuation.definition.comment.html",
+        "settings": {
+          "foreground": "#7ab41f"
+        }
+      },
+      {
+        "scope": "comment.block.html",
+        "settings": {
+          "foreground": "#4acf6e"
+        }
       }
+      
     ]
   }
 }
