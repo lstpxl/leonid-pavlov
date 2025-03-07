@@ -9,6 +9,7 @@
 <!-- Вариант автора, старый:  -->
 #### or <p class="to"></p> - кому или посвящение
 ##### or <p class="date"></p> - дата написания, под тектстом
+&nbsp; Non-brakable space
 
 &#x301; /* Combining acute accent */
 А́ /* Combining acute accent */
