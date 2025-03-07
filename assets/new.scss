@@ -63,12 +63,11 @@ h6 {
 }
 
 #wrapper {
-  // min-height: calc(100vh - 2rem);
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+  // margin-left: 0.5em;
+  // margin-right: 0.5em;
   min-height: 100vh;
   min-width: 70%;
   max-width: clamp(768px, 90%, 98%);
@@ -553,6 +552,36 @@ nav {
       }
     }
   }
+}
+
+.verse-sequence {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+
+  h4.number {
+    color: var(--gray-olive);
+    font-style: italic;
+    font-weight: normal;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .sheet {
+    max-width: fit-content;
+  }
+}
+
+h3.pre-verse-sequence {
+  // color: var(--gray-olive);
+  // font-style: italic;
+  font-weight: normal;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 0;
+    margin-left: 0;
 }
 
 /* --- Side ---------------------------------------------- */
