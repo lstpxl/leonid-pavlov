@@ -1,5 +1,5 @@
 ---
-layout: "empty"
+layout: 'empty'
 _build:
   list: false
   publishResources: false
