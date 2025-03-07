@@ -224,11 +224,15 @@ main {
   background-color: var(--ash-gray-half);
   border-radius: 0.125em;
   box-shadow: 0 0.125em 0.2em 0 var(--smoky-black);
-  padding: 1em;
+  padding: 1.5rem 1rem 1rem;
   width: 100%;
 
+  @media only screen and (min-width: 390px) {
+    padding: 2.5rem 1.5rem;
+  }
+
   @media only screen and (min-width: 560px) {
-    padding: 2.5em;
+    padding: 2.5rem;
     min-width: 400px;
   }
 }
@@ -570,18 +574,28 @@ nav {
   }
 
   .sheet {
-    max-width: fit-content;
+    max-width: none;
+    padding: 1.5rem 1rem 1rem;
+    width: 100%;
+
+    @media only screen and (min-width: 390px) {
+      padding: 2.5rem 1.5rem;
+    }
+
+    @media only screen and (min-width: 450px) {
+      max-width: fit-content;
+      padding: 2.5rem;
+      min-width: 400px;
+    }
   }
 }
 
 h3.pre-verse-sequence {
-  // color: var(--gray-olive);
-  // font-style: italic;
   font-weight: normal;
   font-size: 2rem;
   text-align: center;
   margin-bottom: 0;
-    margin-left: 0;
+  margin-left: 0;
 }
 
 /* --- Side ---------------------------------------------- */
