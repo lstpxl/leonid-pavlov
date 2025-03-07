@@ -1,4 +1,4 @@
-{{ define "main" }}
+{{- define "main" -}}
 <section id="scroll_anchor" class="author">
   <main>
     <div class="photo-box hat">
@@ -7,19 +7,19 @@
     <div class="sheet">
       <article class="about">
         {{/*  {{ partial "preface-grandson.html" . }}  */}}
-        {{ with .Site.GetPage "preface.md" }}
-          {{ .Content }}
-        {{ end }}
+        {{- with .Site.GetPage "preface.md" -}}
+          {{- .Content -}}
+        {{- end -}}
       </article>
     </div>
     <div class="sheet">
       <article class="about">
         {{/*  {{ partial "bio.html" . }}  */}}
-        {{ with .Site.GetPage "bio.md" }}
-          {{ .Content }}
-        {{ end }}
+        {{- with .Site.GetPage "bio.md" -}}
+          {{- .Content -}}
+        {{- end -}}
       </article>
     </div>
   </main>
 </section>
-{{ end }}
+{{- end -}}

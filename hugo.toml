@@ -1,5 +1,5 @@
 languageCode = 'ru'
-title = 'Стихи Леонида Павлова'
+title = 'Леонид Павлов'
 disableKinds = ['taxonomy', 'term']
 [params]
   RecordingsBaseUrl = 'https://pavlov.photography/leonid-pavlov/audio-aac/'

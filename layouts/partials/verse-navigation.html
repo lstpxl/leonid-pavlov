@@ -1,32 +1,32 @@
-{{ $verses := where .Site.RegularPages "Section" "verses" }}
-{{ $base_list := slice }}
-{{ range $verses }}
-  {{ $title := ( .Params.title | default .RelPermalink ) }}
-  {{ $item := slice ( dict "permalink" .Permalink "title" $title "path" .Path "rel" .RelPermalink ) }}
-  {{ $base_list = append $base_list $item }}
-{{ end }}
-{{ $sorted_base_list := sort $base_list "title" "asc" }}
-{{ $prevIndex := 0 }}
-{{ $nextIndex := 0 }}
-{{ range $index, $element := $sorted_base_list }}
-  {{ if eq $.Page.Permalink $element.permalink }}
-    {{ if eq $index (sub (len $sorted_base_list) 1) }}
-      {{ $nextIndex = 0 }}
-    {{ else }}
-      {{ $nextIndex = add $index 1 }}
-    {{ end}}
-    {{ if eq $index 0 }}
-      {{ $prevIndex = (sub (len $sorted_base_list) 1) }}
-    {{ else }}
-      {{ $prevIndex = sub $index 1 }}
-    {{ end}}
-  {{ end }}
-{{ end }}
-{{ $foundItemNext := index $sorted_base_list $nextIndex }}
-{{ $foundItemPrev := index $sorted_base_list $prevIndex }}
+{{- $verses := where .Site.RegularPages "Section" "verses" -}}
+{{- $base_list := slice -}}
+{{- range $verses -}}
+  {{- $title := ( .Params.title | default .RelPermalink ) -}}
+  {{- $item := slice ( dict "permalink" .Permalink "title" $title "path" .Path "rel" .RelPermalink ) -}}
+  {{- $base_list = append $base_list $item -}}
+{{- end -}}
+{{- $sorted_base_list := sort $base_list "title" "asc" -}}
+{{- $prevIndex := 0 -}}
+{{- $nextIndex := 0 -}}
+{{- range $index, $element := $sorted_base_list -}}
+  {{- if eq $.Page.Permalink $element.permalink -}}
+    {{- if eq $index (sub (len $sorted_base_list) 1) -}}
+      {{- $nextIndex = 0 -}}
+    {{- else -}}
+      {{- $nextIndex = add $index 1 -}}
+    {{- end -}}
+    {{- if eq $index 0 -}}
+      {{- $prevIndex = (sub (len $sorted_base_list) 1) -}}
+    {{- else -}}
+      {{- $prevIndex = sub $index 1 -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $foundItemNext := index $sorted_base_list $nextIndex -}}
+{{- $foundItemPrev := index $sorted_base_list $prevIndex -}}
 
 <nav>
-  <a href="{{ $foundItemPrev.permalink }}" title="предыдущее">
+  <a href="{{- $foundItemPrev.permalink -}}" title="предыдущее">
     <svg width="2rem" height="2rem" stroke="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1.5 1.5">
       <title>предыдущее</title>
       <g>
@@ -34,8 +34,7 @@
       </g>
     </svg>
   </a>
-
-  <a href="{{ $foundItemNext.permalink }}" title="следующее">
+  <a href="{{- $foundItemNext.permalink -}}" title="следующее">
     <svg width="2rem" height="2rem" stroke="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <title>следующее</title>
       <g>

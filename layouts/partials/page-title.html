@@ -1,0 +1,15 @@
+{{- if (in .RelPermalink "/verses/") -}}
+  {{- if (eq .Page.Title "") -}}
+    Стихи - {{ .Site.Title -}}
+  {{- else -}}
+    {{- .Page.Title }} - {{ .Site.Title -}}
+  {{- end -}}
+{{- else if (in .RelPermalink "/recordings/") -}}
+  {{- if (eq .Page.Title "") -}}
+    Аудиозаписи - {{ .Site.Title -}}
+  {{- else -}}
+    {{- .Page.Title }} (аудио) - {{ .Site.Title -}}
+  {{- end -}}
+{{- else -}}
+  {{- .Page.Title -}}
+{{- end -}}

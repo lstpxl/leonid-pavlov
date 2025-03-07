@@ -2,5 +2,5 @@
 aliases: 
 - /author
 layout: author
-title: Welcome
+title: 'Стихи Леонида Павлова'
 ---
