@@ -10,6 +10,8 @@
   {{- else -}}
     {{- .Page.Title }} (аудио) - {{ .Site.Title -}}
   {{- end -}}
+{{- else if (in .RelPermalink "/top10/") -}}
+  {{- .Page.Title }} - {{ .Site.Title -}}
 {{- else -}}
   {{- .Page.Title -}}
 {{- end -}}
