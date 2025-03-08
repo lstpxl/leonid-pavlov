@@ -557,7 +557,7 @@ nav {
 }
 
 .verse-sequence {
-  h3 {
+  > h3 {
     font-weight: normal;
     font-size: 2rem;
     text-align: center;
@@ -569,7 +569,7 @@ nav {
     }
   }
   
-  h4 {
+  > h4 {
     color: var(--gray-olive);
     font-style: italic;
     font-weight: normal;
