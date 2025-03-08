@@ -99,7 +99,7 @@ a {
   margin-bottom: 1em;
 }
 
-/* --- Header ---------------------------------------------- */
+/* ----- Header ----- */
 
 header {
   display: grid;
@@ -183,7 +183,7 @@ header {
   }
 }
 
-/* --- Middle section ---------------------------------------------- */
+/* ----- Middle section ----- */
 
 section {
   position: relative;
@@ -200,7 +200,7 @@ section {
   }
 }
 
-/* --- Main block ---------------------------------------------- */
+/* ----- Main block ----- */
 
 main {
   position: relative;
@@ -616,7 +616,7 @@ nav {
   }
 }
 
-/* --- Side ---------------------------------------------- */
+/* ----- Side ----- */
 
 aside {
   flex: 1;
@@ -630,7 +630,7 @@ h3 {
   font-weight: 700;
 }
 
-/* --- GRID LIST ---------------------------------------------- */
+/* ----- GRID LIST ----- */
 
 ol.gridly {
   display: grid;
@@ -809,7 +809,7 @@ ol.gridly {
   }
 }
 
-/* --- Floating photos ---------------------------------------------- */
+/* ----- Floating photos ----- */
 
 .photo-box {
   --proportion: 1;
@@ -835,42 +835,17 @@ ol.gridly {
   transition: ease-in-out 0.5s;
 }
 
-/* HAT -------------- */
-
-@keyframes hat-slide {
-  from {
-    top: -1.5em;
-    right: 38%;
-  }
-
-  to {
-    top: -9.5em;
-    right: 20%;
-  }
-}
-
-@keyframes hat-slide-mobile {
-  from {
-    top: -1.5em;
-  }
-
-  to {
-    top: -9.5em;
-  }
-}
+/* ----- Author in a hat ----- */
 
 .hat {
   --image-url: var(--author-in-hat-image);
   --proportion: calc(1045 / 811) !important;
   --use-width: 250px !important;
-  height: calc(var(--proportion) * var(--use-width) - 13rem) !important;
+  height: calc(var(--proportion) * var(--use-width) - 6rem) !important;
 
   .photocard {
     top: -1.5em;
     right: 50%;
-    animation: hat-slide-mobile linear both;
-    animation-timeline: view(block);
-    animation-range: exit -40% exit 40%;
   }
 
   @media only screen and (min-width: 825px) {
@@ -878,10 +853,7 @@ ol.gridly {
 
     .photocard {
       top: -1.5em;
-      right: 50%;
-      animation: hat-slide linear both;
-      animation-timeline: view(block);
-      animation-range: exit -20% exit 40%;
+      right: 20%;
     }
   }
 
@@ -890,7 +862,7 @@ ol.gridly {
   }
 }
 
-/* MEDAL -------------- */
+/* ----- Author in a uniform ----- */
 
 .medal {
   --image-url: var(--author-with-medal-image);
@@ -930,7 +902,7 @@ ol.gridly {
   }
 }
 
-/* COUCH -------------- */
+/* ----- Author working on a couch ----- */
 
 .couch {
   --image-url: var(--author-working-image);
@@ -947,7 +919,7 @@ ol.gridly {
   }
 }
 
-/* --- Footer ---------------------------------------------- */
+/* ----- Footer ----- */
 
 footer {
   font-size: 0.75rem;
