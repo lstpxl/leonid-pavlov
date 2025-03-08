@@ -569,12 +569,12 @@ nav {
     text-align: center;
     margin-bottom: 0;
     margin-left: 0;
-    
+
     + h4 {
       margin-bottom: 3rem;
     }
   }
-  
+
   > h4 {
     color: var(--gray-olive);
     font-style: italic;
@@ -615,8 +615,6 @@ nav {
     }
   }
 }
-
-
 
 /* --- Side ---------------------------------------------- */
 
@@ -839,23 +837,75 @@ ol.gridly {
 
 /* HAT -------------- */
 
+@keyframes hat-slide {
+  from {
+    transform: translateX(-40%) translateY(1rem);
+  }
+
+  to {
+    transform: translateX(40%) translateY(1rem);
+  }
+}
+
+@keyframes hat-slide-mobile {
+  from {
+    transform: translateX(50%);
+  }
+
+  to {
+    transform: translateX(70%);
+  }
+}
+
+@keyframes hat-box-slide {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-9rem);
+  }
+}
+
+@keyframes hat-box-slide-mobile {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-9rem);
+  }
+}
+
 .hat {
   --image-url: var(--author-in-hat-image);
   --proportion: calc(1045 / 811) !important;
   --use-width: 250px !important;
-  height: calc(var(--proportion) * var(--use-width) - 5em) !important;
+  height: calc(var(--proportion) * var(--use-width) - 13em) !important;
+  animation: hat-box-slide-mobile linear both;
+  animation-timeline: view(block);
+  animation-range: exit 0% exit 60%;
 
   .photocard {
     top: -1.5em;
+    animation: hat-slide-mobile linear both;
+    animation-timeline: view(block);
+    animation-range: exit 20% exit 100%;
   }
 
   @media only screen and (min-width: 825px) {
     --use-width: 300px !important;
+    animation: hat-box-slide linear both;
+    animation-timeline: view(block);
+    animation-range: exit 0% exit 100%;
 
     .photocard {
       top: -2.5em;
       right: 10%;
-      transform: none;
+      // transform: none;
+      animation: hat-slide linear both;
+      animation-timeline: view(block);
+      animation-range: exit 0% exit 100%;
     }
   }
 
@@ -910,10 +960,10 @@ ol.gridly {
   --image-url: var(--author-working-image);
   --proportion: calc(1217 / 1580) !important;
   --use-width: 320px !important;
-  height: calc(var(--proportion) * var(--use-width) - 1rem) !important;
+  height: calc(var(--proportion) * var(--use-width) - 2rem) !important;
 
   .photocard {
-    top: 1rem;
+    top: 0.5rem;
   }
 
   @media only screen and (min-width: 825px) {
