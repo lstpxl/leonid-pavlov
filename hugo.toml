@@ -1,6 +1,6 @@
 languageCode = 'ru'
 title = 'Леонид Павлов'
-disableKinds = ['taxonomy', 'term']
+disableKinds = ['taxonomy', 'RSS', 'term', '404', 'robotsTXT']
 [params]
   RecordingsBaseUrl = 'https://pavlov.photography/leonid-pavlov/audio-aac/'
 [permalinks]
@@ -12,13 +12,10 @@ disableKinds = ['taxonomy', 'term']
       unsafe = false
     [markup.goldmark.extensions]
       footnote = true
-      # [markup.goldmark.extensions.extras]
-        # [markup.goldmark.extensions.extras.superscript]
-          # enable = true
       [markup.goldmark.extensions.typographer]
         disable = false
       [markup.goldmark.extensions.passthrough]
-        enable = true
-        [markup.goldmark.extensions.passthrough.delimiters]
-          block = [['$$', '$$'], ['\[', '\]']]
-          inline = [['$', '$']]
+        # enable = true
+        # [markup.goldmark.extensions.passthrough.delimiters]
+          # block = [['$$', '$$'], ['\[', '\]']]
+          # inline = [['$', '$']]
