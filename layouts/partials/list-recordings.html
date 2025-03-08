@@ -24,7 +24,7 @@
   {{- end -}}
 <li class="divider"><hr/></li>  
   {{- range $sorted_special_list -}}
-    <li class="special {{- if eq $.Page.RelPermalink .rel -}}active{{- end -}}">
+    <li class="special {{ if eq $.Page.RelPermalink .rel -}}active{{- end -}}">
       <a href="{{- .permalink -}}"><div>{{- .title -}}</div><span>{{- .length -}}</span></a>
     </li>
   {{- end -}}
