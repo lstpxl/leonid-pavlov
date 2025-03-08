@@ -423,6 +423,11 @@ article {
       font-weight: normal;
     }
 
+    h5 + h5 {
+      // two datesigned, one just after the other
+      margin-top: 0.5em;
+    }
+
     h6 {
       // scriptum, eg in verses/s39.md
       margin-left: 10em;
@@ -457,6 +462,7 @@ article {
         font-style: italic;
         margin-top: 1em;
         margin-right: 1em;
+        margin-bottom: 0;
         text-align: right;
       }
     }
