@@ -1,5 +1,5 @@
 <header>
-  <h2>Стихи Леонида Павлова</h2>
+  <div><h2>Стихи Леонида Павлова</h2></div>
   <a class="{{- if and (not (in .RelPermalink "/verses/")) (not (in .RelPermalink "/recordings/")) -}}active{{- end -}}" href="{{- .Site.BaseURL -}}" data-debug="{{- .RelPermalink -}}" data-discover="true" aria-current="page">
     {{- partial "icons/person.html" (dict "width" "1em" "height" "1em" "title" "об авторе" ) -}}
     <div>об авторе</div>

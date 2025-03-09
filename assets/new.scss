@@ -17,7 +17,7 @@ html {
   --error-red: oklch(53% 0.21 25);
   --sheet-of-paper-image: url("{{ .Site.BaseURL }}yellow-paper.webp");
   --author-in-hat-image: url("{{ .Site.BaseURL }}in-a-hat.webp");
-  --author-with-medal-image: url("{{ .Site.BaseURL }}in-a-uniform.webp");
+  --author-with-uniform-image: url("{{ .Site.BaseURL }}in-a-uniform.webp");
   --author-working-image: url("{{ .Site.BaseURL }}working-on-a-couch.webp");
   font-family: Playfair, serif;
   font-optical-sizing: auto;
@@ -117,21 +117,26 @@ header {
     justify-items: end;
   }
 
-  h2 {
+  > div {
     grid-column: span 3;
     background: var(--sheet-of-paper-image) no-repeat bottom center;
     background-size: 350px 256px;
     width: 350px;
     height: 4rem;
-    text-align: center;
-    padding-top: 1.25rem;
-    font-size: 1.25rem;
-    font-weight: normal;
-    color: var(--ebony);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @media only screen and (min-width: 825px) {
       grid-column: span 1;
       justify-self: start;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: normal;
+      color: var(--ebony);
+      text-align: center;
     }
   }
 
@@ -866,8 +871,8 @@ ol.gridly {
 
 /* ----- Author in a uniform ----- */
 
-.medal {
-  --image-url: var(--author-with-medal-image);
+.uniform {
+  --image-url: var(--author-with-uniform-image);
   --proportion: calc(1366 / 1131) !important;
   --use-width: 250px !important;
   height: calc(var(--proportion) * var(--use-width) - 1rem) !important;
@@ -881,20 +886,19 @@ ol.gridly {
   }
 }
 
-.medal-inside {
-  --image-url: var(--author-with-medal-image);
+.uniform-inside {
+  --image-url: var(--author-with-uniform-image);
   --proportion: calc(1366 / 1131) !important;
   --use-width: 250px !important;
   height: calc(var(--proportion) * var(--use-width) - 0rem) !important;
   position: relative;
   top: 0;
   left: 0;
-  transform: none;
-  transition: ease-in-out 0.5s;
-  grid-column: 1 / 2;
-  grid-row: -7 / -1;
   justify-self: center;
   display: none;
+  
+  // grid-column: 1 / 2;
+  // grid-row: -7 / -1;
 
   @media only screen and (min-width: 825px) {
     grid-column: 2 / 3;
