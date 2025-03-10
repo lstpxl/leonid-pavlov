@@ -363,6 +363,9 @@ article {
       font-size: 1.75rem;
       color: var(--ebony);
       margin-top: 1em;
+      text-transform: uppercase;
+      text-align: center;
+      max-width: unset;
     }
 
     & > p {
@@ -506,6 +509,12 @@ article {
       min-width: 500px;
     }
 
+    h1 {
+      max-width: unset;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
     p {
       color: var(--ebony);
       font-style: italic;
@@ -521,6 +530,7 @@ article {
       & + h1 {
         margin-top: 1rem;
         margin-left: 4rem;
+        margin-right: 4rem;
       }
     }
 
