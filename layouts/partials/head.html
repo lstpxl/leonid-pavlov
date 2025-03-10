@@ -12,7 +12,15 @@
   <link rel="manifest" href="{{- .Site.BaseURL -}}favicon/site.webmanifest">
   {{ with resources.Get "new.scss" -}}
     {{- with resources.ExecuteAsTemplate "main.css" $ . -}}
-      {{- $style := . | css.Sass -}}
+      {{ $transpileOpts := dict
+        "enableSourceMap" (not hugo.IsProduction)
+        "outputStyle" (cond hugo.IsProduction "compressed" "expanded")
+        "enableSourceMap" (cond hugo.IsProduction false true)
+        "targetPath" "style.css"
+        "transpiler" "libsass"
+      }}
+      {{- $style := css.Sass $transpileOpts . -}}
+      {{- /*  {{- | resources.minify -}}  */ -}}
       {{- /*  {{- | resources.Fingerprint -}}  */ -}}
       <link rel="stylesheet" href="{{- $style.Permalink -}}">
     {{- end -}}
