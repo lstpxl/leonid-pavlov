@@ -7,7 +7,7 @@
     }
   ],
   "rules": {
-    "import-notation": "url",
+    "import-notation": null,
     "declaration-empty-line-before": "never",
     "media-feature-range-notation": "prefix",
     "no-descending-specificity": null,

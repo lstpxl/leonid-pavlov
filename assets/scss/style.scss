@@ -1,29 +1,9 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-html {
-  --black-olive: oklch(37% 0.0264 148);
-  --gray-olive: oklch(55% 0.04 148);
-  --smoky-black: oklch(17% 0.01 999);
-  --alabaster: oklch(96% 0.01 99);
-  --ash-gray-half: oklch(88% 0.015 99);
-  --ash-gray-quarter: oklch(84% 0.015 99);
-  --ash-gray: oklch(80% 0.015 99);
-  --battleship-gray: oklch(65% 0.0175 99);
-  --ebony: oklch(50% 0.02 99);
-  --air-superiority-blue: oklch(60% 0.06 230);
-  --sahara-accent: oklch(85% 0.04 90);
-  --sahara: oklch(72% 0.04 90);
-  --sahara-dim: oklch(58% 0.04 90);
-  --error-red: oklch(53% 0.21 25);
-  --sheet-of-paper-image: url("{{ .Site.BaseURL }}yellow-paper.webp");
-  --author-in-hat-image: url("{{ .Site.BaseURL }}in-a-hat.webp");
-  --author-with-uniform-image: url("{{ .Site.BaseURL }}in-a-uniform.webp");
-  --author-working-image: url("{{ .Site.BaseURL }}working-on-a-couch.webp");
-  font-family: Playfair, serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
+$base-url: "{{- .Site.BaseURL -}}";
+
+@import "colors";
 
 *,
 *::before,

@@ -10,19 +10,5 @@
   <link rel="shortcut icon" href="{{- .Site.BaseURL -}}favicon/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="{{- .Site.BaseURL -}}favicon/apple-touch-icon.png">
   <link rel="manifest" href="{{- .Site.BaseURL -}}favicon/site.webmanifest">
-  {{ with resources.Get "new.scss" -}}
-    {{- with resources.ExecuteAsTemplate "main.css" $ . -}}
-      {{ $transpileOpts := dict
-        "enableSourceMap" (not hugo.IsProduction)
-        "outputStyle" (cond hugo.IsProduction "compressed" "expanded")
-        "enableSourceMap" (cond hugo.IsProduction false true)
-        "targetPath" "style.css"
-        "transpiler" "libsass"
-      }}
-      {{- $style := css.Sass $transpileOpts . -}}
-      {{- /*  {{- | resources.minify -}}  */ -}}
-      {{- /*  {{- | resources.Fingerprint -}}  */ -}}
-      <link rel="stylesheet" href="{{- $style.Permalink -}}">
-    {{- end -}}
-  {{- end -}}
+  {{- partial "style-link.html" . -}}
 </head>

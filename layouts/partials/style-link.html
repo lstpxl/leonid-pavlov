@@ -1,0 +1,12 @@
+{{- $sass := resources.Get "scss/style.scss" -}}
+{{- $transpileOpts := dict
+  "enableSourceMap" (not hugo.IsProduction)
+  "outputStyle" (cond hugo.IsProduction "compressed" "expanded")
+  "enableSourceMap" (cond hugo.IsProduction false true)
+  "targetPath" "style.css"
+  "transpiler" "libsass"
+-}}
+{{- $css := css.Sass $transpileOpts $sass -}}
+{{- $result := $css | resources.ExecuteAsTemplate "style.css" . -}}
+{{/*  {{ $more := $result | minify | resources.Fingerprint "sha256" }}  */}}
+<link rel="stylesheet" href="{{ $result.RelPermalink }}">
