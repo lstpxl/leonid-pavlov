@@ -1,0 +1,8 @@
+$base-url: "{{- .Site.BaseURL -}}";
+
+html {
+  --sheet-of-paper-image: url("#{$base-url}yellow-paper.webp");
+  --author-in-hat-image: url("#{$base-url}in-a-hat.webp");
+  --author-with-uniform-image: url("#{$base-url}in-a-uniform.webp");
+  --author-working-image: url("#{$base-url}working-on-a-couch.webp");
+}

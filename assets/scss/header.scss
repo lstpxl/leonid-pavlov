@@ -1,0 +1,88 @@
+/* ----- Header ----- */
+
+header {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1.5rem;
+  place-items: center center;
+
+  @media only screen and (min-width: 425px) {
+    font-size: 1.125rem;
+  }
+
+  @media only screen and (min-width: 825px) {
+    gap: 2rem;
+    grid-template-columns: auto auto auto auto;
+    justify-items: end;
+  }
+
+  > div {
+    grid-column: span 3;
+    background: var(--sheet-of-paper-image) no-repeat bottom center;
+    background-size: 350px 256px;
+    width: 350px;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (min-width: 825px) {
+      grid-column: span 1;
+      justify-self: start;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: normal;
+      color: var(--ebony);
+      text-align: center;
+    }
+  }
+
+  a {
+    color: var(--ash-gray);
+    text-decoration: none;
+    display: flex;
+    gap: 0.6em;
+    cursor: pointer;
+
+    svg {
+      fill: var(--ash-gray);
+      margin-top: 0.25em;
+    }
+
+    div {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &.active {
+      cursor: default;
+
+      div {
+        color: var(--battleship-gray);
+      }
+
+      svg {
+        fill: var(--battleship-gray);
+      }
+
+      &:hover {
+        color: var(--battleship-gray);
+
+        svg {
+          fill: var(--battleship-gray);
+        }
+      }
+    }
+
+    &:hover {
+      color: var(--alabaster);
+
+      svg {
+        fill: var(--alabaster);
+      }
+    }
+  }
+}

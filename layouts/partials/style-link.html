@@ -1,4 +1,4 @@
-{{- $sass := resources.Get "scss/style.scss" -}}
+{{- $sass := resources.Get "scss/main.scss" -}}
 {{- $transpileOpts := dict
   "enableSourceMap" (not hugo.IsProduction)
   "outputStyle" (cond hugo.IsProduction "compressed" "expanded")
