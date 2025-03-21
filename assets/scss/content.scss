@@ -236,11 +236,12 @@ article {
     h4 {
       // to, dedication
       max-width: 40ch;
+      color: var(--middle-olive);
     }
 
     h5 {
       // date signed
-      color: var(--air-superiority-blue);
+      color: var(--air-superiority-even-darker);
       font-style: italic;
       margin-top: 1em;
       margin-right: 1em;
@@ -409,7 +410,7 @@ nav {
   }
 
   > h4 {
-    color: var(--gray-olive);
+    color: var(--light-olive);
     font-style: italic;
     font-weight: normal;
     font-size: 1.5rem;
@@ -424,7 +425,7 @@ nav {
     gap: 1.5rem;
 
     h4.number {
-      color: var(--gray-olive);
+      color: var(--light-olive);
       font-style: italic;
       font-weight: normal;
       font-size: 2rem;
