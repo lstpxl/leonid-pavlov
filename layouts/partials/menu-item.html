@@ -1,0 +1,15 @@
+{{/*  
+(dict 
+  "context" page context
+  "element" menu item
+  "label" string
+  "iconPartial" string
+)
+*/}}{{- $isActive := .context.IsMenuCurrent .element.Menu .element -}}
+{{- $containsActive := .context.HasMenuCurrent .element.Menu .element -}}
+{{- $partial := index .element.Params "iconPartial" -}}
+{{- $relPermalink := .element.URL -}}
+<a {{ if eq (or $isActive $containsActive) true -}}class="active" aria-disabled="true" tabindex="-1" aria-current="page"{{- end }} href="{{- $relPermalink -}}">
+  {{- partial $partial (dict "width" "1em" "height" "1em" "title" .label ) -}}
+  <div>{{- .label -}}</div>
+</a>

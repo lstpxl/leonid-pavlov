@@ -1,0 +1,34 @@
+{{- $verses := where .Site.RegularPages "Section" "verses" -}}
+{{- $base_list := slice -}}
+{{- range $verses -}}
+  {{- $title := ( .Params.title | default .RelPermalink ) -}}
+  {{- $item := slice ( dict "permalink" .Permalink "title" $title "path" .Path "rel" .RelPermalink ) -}}
+  {{- $base_list = append $base_list $item -}}
+{{- end -}}
+{{- $sorted_base_list := sort $base_list "title" "asc" -}}
+{{- $prevIndex := 0 -}}
+{{- $nextIndex := 0 -}}
+{{- range $index, $element := $sorted_base_list -}}
+  {{- if eq $.Page.Permalink $element.permalink -}}
+    {{- if eq $index (sub (len $sorted_base_list) 1) -}}
+      {{- $nextIndex = 0 -}}
+    {{- else -}}
+      {{- $nextIndex = add $index 1 -}}
+    {{- end -}}
+    {{- if eq $index 0 -}}
+      {{- $prevIndex = (sub (len $sorted_base_list) 1) -}}
+    {{- else -}}
+      {{- $prevIndex = sub $index 1 -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $foundItemNext := index $sorted_base_list $nextIndex -}}
+{{- $foundItemPrev := index $sorted_base_list $prevIndex -}}
+<nav role="navigation" aria-label="Навигация по стихам">
+  <a href="{{- $foundItemPrev.permalink -}}" title="предыдущее">
+    {{- partial "icons/page-previous.html" (dict "width" "2rem" "height" "2rem" "title" "предыдущее" ) -}}
+  </a>
+  <a href="{{- $foundItemNext.permalink -}}" title="следующее">
+    {{- partial "icons/page-next.html" (dict "width" "2rem" "height" "2rem" "title" "следующее" ) -}}
+  </a>
+</nav>

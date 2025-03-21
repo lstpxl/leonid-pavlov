@@ -1,0 +1,3 @@
+{{/* | resources.Fingerprint */}}
+{{- $js := resources.Get "js/main.js" | js.Build ( dict "minify" hugo.IsProduction ) -}}
+<script type="module" src="{{ $js.RelPermalink }}"></script>

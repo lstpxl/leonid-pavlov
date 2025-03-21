@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru">
+{{ partial "head.html" . }}
+<body>
+  <div id="wrapper">
+    <div id="root">
+      {{ partial "header.html" . }}
+      {{ block "main" . }}{{ end }}
+    </div>
+    {{ partial "footer.html" . }}
+  </div>
+  {{- partial "scripts.html" . -}}
+</body>
+</html>

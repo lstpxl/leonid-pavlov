@@ -1,0 +1,17 @@
+<head>
+  <meta charset="UTF-8">
+  <title>{{- partial "page-title.html" . -}}</title>
+  <meta name="description" content="Леонид Семёнович Павлов: стихи, аудиозаписи, биография">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self';font-src fonts.gstatic.com; style-src 'self' fonts.googleapis.com 'unsafe-inline'; media-src 'self' pavlov.photography/ https://pavlov.photography/leonid-pavlov/audio-files/; img-src 'self' data:;">
+  <meta http-equiv="Cache-Control" content="max-age=2600000">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="{{- .Site.BaseURL -}}favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="{{- .Site.BaseURL -}}favicon/favicon.svg">
+  <link rel="shortcut icon" href="{{- .Site.BaseURL -}}favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{- .Site.BaseURL -}}favicon/apple-touch-icon.png">
+  <link rel="manifest" href="{{- .Site.BaseURL -}}favicon/site.webmanifest">
+  {{- partial "style-link.html" . -}}
+</head>

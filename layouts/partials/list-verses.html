@@ -1,0 +1,31 @@
+{{- $displayPhoto := .displayPhoto -}}
+{{- with .context -}}
+
+{{- $verses := where .Site.RegularPages "Section" "verses" -}}
+{{- $base_list := slice -}}
+{{- $item_num := ($verses | len) -}}
+{{- if eq $displayPhoto true -}}
+  {{- $item_num = add $item_num ( sub 8 1 ) -}}
+{{- else -}}
+  {{- $item_num = $item_num -}}
+{{- end -}}
+{{- $rows := int ( math.Ceil ( div ( sub $item_num 0.001 ) 2 ) ) -}}
+
+{{- range $verses -}}
+  {{- $title := ( .Params.title | default .RelPermalink ) -}}
+  {{- $item := slice ( dict "permalink" .Permalink "title" $title "path" .Path "rel" .RelPermalink ) -}}
+  {{- $base_list = append $base_list $item -}}
+{{- end -}}
+{{- $sorted_base_list := sort $base_list "title" "asc" -}}
+<style>.gridly { --gridly-rows: {{- $rows -}}; }</style>
+<ol class="gridly" id="gridly" aria-label="Список стихов">
+  {{- range $sorted_base_list -}}
+    <li class="{{- if eq $.context.Page.RelPermalink .rel -}}active{{- end -}}">
+      <a class="" href="{{- .permalink -}}"><div>{{- .title -}}</div></a>
+    </li>
+  {{- end -}}
+  {{- if eq $displayPhoto true -}}
+  <li class="photocard-v2 uniform-inside-v2">{{- partial "lowres/in-a-uniform.html" -}}</li>
+  {{- end -}}
+</ol>
+{{- end -}}

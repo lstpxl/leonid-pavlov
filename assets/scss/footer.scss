@@ -1,0 +1,19 @@
+/* ----- Footer ----- */
+
+footer {
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+  color: var(--ebony-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25em;
+  justify-content: space-between;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  @media only screen and (min-width: 825px) {
+    flex-direction: row;
+  }
+}

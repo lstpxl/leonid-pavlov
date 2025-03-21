@@ -1,0 +1,25 @@
+{{- define "main" -}}
+<section id="scroll_anchor">
+  <main>
+    <div class="sheet record-sheet">
+      <article class="record">
+        {{- partial "icons/speaker.html" (dict "width" "2rem" "height" "2rem" "title" "аудиозапись" ) -}}
+        <h1 class="margin-bottom-1em">{{- .Page.Title -}}</h1>
+        <audio preload="auto" controls="" controlslist="nofullscreen nodownload">
+          <source src="{{- site.BaseURL -}}audio-files/{{- .Page.Params.filename -}}" type="audio/mpeg">Ваш браузер не поддерживает тэг audio.
+        </audio>
+        {{- .Content -}}
+      </article>
+    </div>
+  </main>
+</section>
+<section id="scroll-anchor" class="two-column">
+    <h2 class="list-header">все записи:</h2>
+    {{- partial "list-recordings.html" . -}}
+    <div class="photo-box-v2 couch-v2">
+      <div class="photocard-v2">
+        {{- partial "lowres/working.html" -}}
+      </div>
+    </div>
+</section>
+{{- end -}}

@@ -1,0 +1,11 @@
+{{- define "main" -}}
+  <section id="scroll_anchor" class="two-column">
+    <h2 class="list-header">все стихи:</h2>
+    {{- partial "list-verses.html" (dict "context" . "displayPhoto" true) -}}
+    <div class="photo-box-v2 uniform-v2">
+      <div class="photocard-v2">
+        {{- partial "lowres/in-a-uniform.html" -}}
+      </div>
+    </div>
+  </section>
+{{- end -}}

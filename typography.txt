@@ -1,0 +1,28 @@
+-- En dash (in Markdown) or (–)
+--- Em dash (in Markdown) or (—)
+... Ellipsis or (…)
+<!-- До исправления автором: -->
+<!-- Исправление автора:  -->
+<!-- Исправление Ильи, было:  -->
+<!-- Вариант автора:  -->
+<!-- Вариант автора, книжка 5:  -->
+<!-- Вариант автора, старый:  -->
+#### or <p class="to"></p> - кому или посвящение
+##### or <p class="date"></p> - дата написания, под тектстом
+&nbsp; Non-brakable space
+
+&#x301; /* Combining acute accent */
+А́ /* Combining acute accent */
+◌́  /* Combining acute accent */
+“” Typographic quotes (informally "66 and 99")
+«» Primary russian quotes
+„“ Secondary russian quotes
+
+More extensions in Hugo:
+https://gohugo.io/configuration/markup/#typographer
+
+Точка всегда ставится после закрывающих кавычек, но не перед ними. Многоточие, вопросительный и восклицательный знак ставятся перед закрывающими кавычками.
+
+“День, как день”
+
+{{ warnf "The value of elemet is %v" .iconPartial }}

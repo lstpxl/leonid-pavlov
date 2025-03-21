@@ -1,0 +1,11 @@
+{{- define "main" -}}
+    <section id="scroll_anchor" class="two-column">
+      <h2 class="list-header">все записи:</h2>
+      {{- partial "list-recordings.html" . -}}
+      <div class="photo-box-v2 couch-v2">
+        <div class="photocard-v2">
+          {{- partial "lowres/working.html" -}}
+        </div>
+      </div>
+    </section>
+{{- end -}}

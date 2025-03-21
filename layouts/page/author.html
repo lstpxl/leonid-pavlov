@@ -1,0 +1,25 @@
+{{- define "main" -}}
+<section id="scroll_anchor" class="author">
+  <main>
+    <div class="photo-box-v2 hat-v2">
+      <div class="photocard-v2">
+        {{- partial "lowres/in-a-hat-responsive.html" -}}
+      </div>
+    </div>
+    <div class="sheet">
+      <article class="about">
+        {{- with .Site.GetPage "preface.md" -}}
+          {{- .Content -}}
+        {{- end -}}
+      </article>
+    </div>
+    <div class="sheet">
+      <article class="about">
+        {{- with .Site.GetPage "bio.md" -}}
+          {{- .Content -}}
+        {{- end -}}
+      </article>
+    </div>
+  </main>
+</section>
+{{- end -}}

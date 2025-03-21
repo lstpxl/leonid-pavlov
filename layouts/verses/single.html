@@ -1,0 +1,16 @@
+{{- define "main" -}}
+<section id="scroll_anchor" class="sided">
+  <main>
+    <div class="sheet verse-sheet">
+      <article class="verse">{{- if and .Page.Title (not .Params.hidetitle) -}}   <h1>{{- .Page.Title -}}</h1>{{- end -}}
+      {{- .Content -}}{{- if (not .Params.hidedate) -}}{{- $datesigned := ( .Page.Params.datesigned | default "" ) -}}{{- if ne $datesigned "" -}}<p class="date">{{- $datesigned -}}</p>{{- end -}}{{- end -}}
+      </article>
+    </div>
+    {{- partial "verse-navigation.html" . -}}
+  </main>
+  <aside>
+    <h2 class="list-header">все стихи:</h2>
+    {{- partial "list-verses.html" (dict "context" . "displayPhoto" false) -}}
+  </aside>
+</section>
+{{- end -}}

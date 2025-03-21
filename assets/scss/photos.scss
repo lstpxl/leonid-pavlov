@@ -1,0 +1,115 @@
+/* ----- Floating photos ----- */
+
+.photo-box {
+  --proportion: 1;
+  --use-width: 100px;
+  width: 100%;
+  position: relative;
+  transition: ease-in-out 0.5s;
+  height: calc(var(--proportion) * var(--use-width));
+}
+
+.photocard {
+  background-image: var(--image-url);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: calc(var(--use-width))
+    calc(var(--proportion) * var(--use-width));
+  width: calc(var(--use-width));
+  height: calc(var(--proportion) * var(--use-width));
+  position: absolute;
+  top: 0;
+  right: 50%;
+  transform: translateX(50%);
+  transition: ease-in-out 0.5s;
+
+  figcaption {
+    display: none;
+  }
+}
+
+/* ----- Author in a hat ----- */
+
+.hat {
+  // --image-url: var(--author-in-hat-image);
+  --proportion: calc(1045 / 811) !important;
+  --use-width: 250px !important;
+  height: calc(var(--proportion) * var(--use-width) - 6rem) !important;
+
+  .photocard {
+    top: -1.5em;
+    right: 50%;
+  }
+
+  @media only screen and (min-width: 825px) {
+    --use-width: 300px !important;
+
+    .photocard {
+      top: -1.5em;
+      right: 20%;
+    }
+  }
+
+  & + .sheet {
+    padding-top: 4em !important;
+  }
+}
+
+/* ----- Author in a uniform ----- */
+
+.uniform {
+  // --image-url: var(--author-with-uniform-image);
+  --proportion: calc(1366 / 1131) !important;
+  --use-width: 250px !important;
+  height: calc(var(--proportion) * var(--use-width) - 1rem) !important;
+
+  .photocard {
+    top: 1em;
+  }
+
+  @media only screen and (min-width: 825px) {
+    display: none;
+  }
+}
+
+.uniform-inside {
+  // --image-url: var(--author-with-uniform-image);
+  --proportion: calc(1366 / 1131) !important;
+  --use-width: 250px !important;
+  height: calc(var(--proportion) * var(--use-width) - 0rem) !important;
+  position: relative;
+  top: 0;
+  left: 0;
+  justify-self: center;
+  display: none;
+  list-style-type: none;
+
+  &::before {
+    content: "";
+    display: none;
+  }
+
+  @media only screen and (min-width: 825px) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 8;
+    display: block;
+    transform: translateY(-3rem);
+  }
+}
+
+/* ----- Author working on a couch ----- */
+
+.couch {
+  // --image-url: var(--author-working-image);
+  --proportion: calc(1217 / 1580) !important;
+  --use-width: 320px !important;
+  height: calc(var(--proportion) * var(--use-width) - 2rem) !important;
+
+  .photocard {
+    top: 0.5rem;
+  }
+
+  @media only screen and (min-width: 825px) {
+    --use-width: 600px !important;
+  }
+}

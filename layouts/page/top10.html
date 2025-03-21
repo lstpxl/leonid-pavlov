@@ -1,0 +1,42 @@
+{{- define "main" -}}
+  {{- $verses := where .Site.RegularPages "Section" "verses" -}}
+  {{- $base_list := slice -}}
+  {{- range $verses -}}
+    {{- $top := ( .Params.top | default 0 ) -}}
+    {{- $title := ( .Params.title | default .RelPermalink ) -}}
+    {{- $item := slice ( dict "permalink" .Permalink "title" $title "path" .Path "rel" .RelPermalink "top" $top "page" . ) -}}
+    {{- if gt $top 0 -}}
+      {{- $base_list = append $base_list $item -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $sorted_base_list := sort $base_list "top" "asc" -}}
+  <div class="verse-sequence">
+    <h1>Краткая субъективная подборка</h1>
+    <h4>{{ $sorted_base_list | len }}&nbsp;стихотворений</h4>
+    <section>
+      {{- $counter := 1 -}}
+      <div class="seq-items">
+        {{- range $sorted_base_list -}}
+          <h4 class="number">{{- $counter -}}.</h4>
+          {{- $counter = add $counter 1 -}}
+          <div class="sheet verse-sheet">
+            <article class="verse">
+              {{- with .page -}}
+                {{- if and .Title (not .Params.hidetitle) -}}
+                  <h1>{{- .Title -}}</h1>
+                {{- end -}}
+                {{- .Content -}}
+                {{- if (not .Params.hidedate) -}}
+                  {{- $datesigned := ( .Params.datesigned | default "" ) -}}
+                  {{- if ne $datesigned "" -}}
+                    <p class="date">{{- $datesigned -}}</p>
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            </article>
+          </div>
+        {{- end -}}
+      </div>
+    </section>
+  </div>
+{{- end -}}

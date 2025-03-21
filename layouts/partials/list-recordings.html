@@ -1,0 +1,31 @@
+{{- $records := where .Site.RegularPages "Section" "recordings" -}}
+{{- $base_list := slice -}}
+{{- $special_list := slice -}}
+{{- $rows := int ( math.Ceil ( div ( add ($records | len) 0.999 ) 2 ) ) -}}
+{{- range $records -}}
+  {{- $title := ( .Params.title | default .RelPermalink ) -}}
+  {{- $album := ( .Params.album | default "" ) -}}
+  {{- $length := ( .Params.length | default "" ) -}}
+  {{- $item := slice ( dict "permalink" .Permalink "title" $title "album" $album "path" .Path "length" $length "rel" .RelPermalink ) -}}
+  {{- if eq $album "" -}}
+    {{- $base_list = append $base_list $item -}}
+  {{- else -}}
+    {{- $special_list = append $special_list $item -}}
+  {{- end -}}
+{{- end -}}
+{{- $sorted_base_list := sort $base_list "title" "asc" -}}
+{{- $sorted_special_list := sort $special_list "path" "asc" -}}
+<style>.gridly { --gridly-rows: {{- $rows -}}; }</style>
+<ol class="gridly" id="gridly">
+  {{- range $sorted_base_list -}}
+    <li class="{{- if eq $.Page.RelPermalink .rel -}}active{{- end -}}">
+      <a href="{{- .permalink -}}"><div>{{- .title -}}</div><span>{{- .length -}}</span></a>
+    </li>
+  {{- end -}}
+<li class="divider"><hr/></li>  
+  {{- range $sorted_special_list -}}
+    <li class="special {{ if eq $.Page.RelPermalink .rel -}}active{{- end -}}">
+      <a href="{{- .permalink -}}"><div>{{- .title -}}</div><span>{{- .length -}}</span></a>
+    </li>
+  {{- end -}}
+</ol>
