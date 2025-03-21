@@ -25,7 +25,7 @@ menus:
     - name: "аудиозаписи"
       pageRef: /recordings
       params:
-        - iconPartial: "icons/speaker.html"
+        - iconPartial: "icons/mic.html"
       weight: 30
 markup:
   goldmark:

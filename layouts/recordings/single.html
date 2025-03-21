@@ -3,7 +3,7 @@
   <main>
     <div class="sheet record-sheet">
       <article class="record">
-        {{- partial "icons/speaker.html" (dict "width" "2rem" "height" "2rem" "title" "аудиозапись" ) -}}
+        {{- partial "icons/mic.html" (dict "width" "2rem" "height" "2rem" "title" "аудиозапись" ) -}}
         <h1 class="margin-bottom-1em">{{- .Page.Title -}}</h1>
         <audio preload="auto" controls="" controlslist="nofullscreen nodownload">
           <source src="{{- site.BaseURL -}}audio-files/{{- .Page.Params.filename -}}" type="audio/mpeg">Ваш браузер не поддерживает тэг audio.
