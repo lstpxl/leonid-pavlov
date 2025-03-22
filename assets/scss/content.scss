@@ -90,7 +90,7 @@ article {
     margin-top: 0.3em;
     margin-bottom: 1em;
     line-height: 110%;
-    color: var(--ebony);
+    color: var(--ebony-darker);
 
     @media only screen and (min-width: 825px) {
       max-width: 32ch;
@@ -236,7 +236,7 @@ article {
     h4 {
       // to, dedication
       max-width: 40ch;
-      color: var(--middle-olive);
+      color: var(--camarone);
     }
 
     h5 {
