@@ -1,7 +1,8 @@
 {{- $records := where .Site.RegularPages "Section" "recordings" -}}
 {{- $base_list := slice -}}
 {{- $special_list := slice -}}
-{{- $rows := int ( math.Ceil ( div ( add ($records | len) 0.999 ) 2 ) ) -}}
+{{/* +1 accounts for the divider <li>; divide by 2.0 to force float division before Ceil */}}
+{{- $rows := int ( math.Ceil ( div ( add ($records | len) 1 ) 2.0 ) ) -}}
 {{- range $records -}}
   {{- $title := ( .Params.title | default .RelPermalink ) -}}
   {{- $album := ( .Params.album | default "" ) -}}

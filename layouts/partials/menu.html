@@ -1,4 +1,0 @@
-{{- $currentPage := . -}}
-{{- range site.Menus.main -}}
-  {{- partial "menu-item.html" (dict "context" $currentPage "element" . "label" .Name "iconPartial" . ) -}}
-{{- end -}}

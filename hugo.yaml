@@ -1,4 +1,4 @@
-languageCode: "ru"
+locale: "ru"
 title: "Леонид Павлов"
 disableKinds:
   - "taxonomy"
@@ -9,23 +9,23 @@ disableKinds:
 # params:
   # recordingsBaseUrl: "https://pavlov.photography/leonid-pavlov/audio-aac/"
 permalinks:
-  recordings: "/recordings/:filename/"
+  recordings: "/recordings/:contentbasename/"
 menus:
   main:
     - name: "об авторе"
       pageRef: /
       params:
-        - iconPartial: "icons/person.html"
+        iconPartial: "icons/person.html"
       weight: 10
     - name: "стихи"
       pageRef: /verses
       params:
-        - iconPartial: "icons/open-book.html"
+        iconPartial: "icons/open-book.html"
       weight: 20
     - name: "аудиозаписи"
       pageRef: /recordings
       params:
-        - iconPartial: "icons/mic.html"
+        iconPartial: "icons/mic.html"
       weight: 30
 markup:
   goldmark:

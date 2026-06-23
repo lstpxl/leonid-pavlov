@@ -3,3 +3,5 @@ public/**
 resources
 node_modules
 .DS_Store
+.devbin
+.hugo_build.lock

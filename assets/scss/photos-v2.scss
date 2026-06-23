@@ -10,11 +10,6 @@
 }
 
 .photocard-v2 {
-  background-image: var(--image-url);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: calc(var(--use-width))
-    calc(var(--proportion) * var(--use-width));
   width: calc(var(--use-width));
   height: calc(var(--proportion) * var(--use-width));
   position: absolute;

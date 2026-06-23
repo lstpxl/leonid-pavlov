@@ -5,7 +5,7 @@ draft = true
   hidetitle = false
   datesigned = '1991 г.'
   book = 'Издано 1998'
-[_build]
+[build]
   list = false
   publishResources = false
 +++

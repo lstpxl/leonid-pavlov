@@ -1,6 +1,6 @@
 ---
 layout: 'empty'
-_build:
+build:
   list: false
   publishResources: false
 ---
