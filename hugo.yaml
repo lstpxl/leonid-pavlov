@@ -1,5 +1,6 @@
 locale: "ru"
 title: "Леонид Павлов"
+enableGitInfo: true
 disableKinds:
   - "taxonomy"
   - "RSS"

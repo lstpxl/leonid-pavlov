@@ -1,0 +1,52 @@
+{{- /* JSON-LD structured data. Googlebot reads data blocks regardless of the
+       page CSP (application/ld+json is non-executable, so script-src does not
+       apply). */ -}}
+{{- $person := dict "@type" "Person" "name" "Леонид Семёнович Павлов" "alternateName" "Леонид Павлов" -}}
+{{- $data := false -}}
+{{- if .IsHome -}}
+  {{- $data = dict
+      "@context" "https://schema.org"
+      "@type" "Person"
+      "name" "Леонид Семёнович Павлов"
+      "alternateName" "Леонид Павлов"
+      "birthDate" "1923"
+      "deathDate" "2001"
+      "jobTitle" "поэт"
+      "description" "Советский поэт и фронтовик, автор стихов и аудиозаписей."
+      "url" .Permalink
+  -}}
+{{- else if and .IsPage (eq .Section "verses") -}}
+  {{- $data = dict
+      "@context" "https://schema.org"
+      "@type" "CreativeWork"
+      "name" .Title
+      "headline" .Title
+      "inLanguage" "ru"
+      "author" $person
+      "url" .Permalink
+      "text" (trim (.Content | plainify | htmlUnescape) " \n")
+  -}}
+{{- else if and .IsPage (eq .Section "recordings") -}}
+  {{- $dur := "" -}}
+  {{- with .Params.length -}}
+    {{- $parts := slice -}}
+    {{- range (split . ":") -}}
+      {{- $n := . | strings.TrimLeft "0" -}}
+      {{- $parts = $parts | append (cond (eq $n "") "0" $n) -}}
+    {{- end -}}
+    {{- if eq (len $parts) 2 -}}{{ $dur = printf "PT%sM%sS" (index $parts 0) (index $parts 1) }}{{- end -}}
+    {{- if eq (len $parts) 3 -}}{{ $dur = printf "PT%sH%sM%sS" (index $parts 0) (index $parts 1) (index $parts 2) }}{{- end -}}
+  {{- end -}}
+  {{- $data = dict
+      "@context" "https://schema.org"
+      "@type" "AudioObject"
+      "name" .Title
+      "inLanguage" "ru"
+      "encodingFormat" "audio/aac"
+      "contentUrl" (printf "%saudio-files/%s" .Site.BaseURL .Params.filename)
+      "author" $person
+      "url" .Permalink
+  -}}
+  {{- if $dur -}}{{ $data = merge $data (dict "duration" $dur) }}{{- end -}}
+{{- end -}}
+{{- with $data -}}<script type="application/ld+json">{{ jsonify . | safeJS }}</script>{{- end -}}

@@ -1,0 +1,15 @@
+{{- /* Per-page meta description: explicit front matter wins, then poem text
+       for verses, a generated line for recordings, else the site default. */ -}}
+{{- $default := "Леонид Семёнович Павлов: стихи, аудиозаписи, биография" -}}
+{{- $desc := "" -}}
+{{- with .Description -}}{{ $desc = . }}{{- end -}}
+{{- if not $desc -}}
+  {{- if and .IsPage (eq .Section "verses") -}}
+    {{- $desc = .Content | plainify | htmlUnescape -}}
+  {{- else if and .IsPage (eq .Section "recordings") -}}
+    {{- $desc = printf "Аудиозапись стихотворения «%s» в исполнении автора, Леонида Павлова." .Title -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $desc -}}{{ $desc = $default }}{{- end -}}
+{{- $desc = trim ($desc | replaceRE "\\s+" " ") " " -}}
+{{- $desc | truncate 160 -}}

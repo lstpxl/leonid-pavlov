@@ -9,6 +9,25 @@
           <source src="{{- site.BaseURL -}}audio-files/{{- .Page.Params.filename -}}" type="audio/aac">Ваш браузер не поддерживает тэг audio.
         </audio>
         {{- .Content -}}
+        {{- /* Show the text of the poem being read so the page has unique,
+               indexable content. Matched by explicit `verse` param, else by
+               exact title; rendered collapsed. */ -}}
+        {{- $verse := false -}}
+        {{- with .Params.verse -}}
+          {{- $verse = $.Site.GetPage (printf "/verses/%s" .) -}}
+        {{- else -}}
+          {{- $title := lower $.Page.Title -}}
+          {{- range where $.Site.RegularPages "Section" "verses" -}}
+            {{- if eq (lower .Title) $title -}}{{ $verse = . }}{{- end -}}
+          {{- end -}}
+        {{- end -}}
+        {{- with $verse -}}
+          <details class="verse-text">
+            <summary>текст стихотворения</summary>
+            <div class="verse">{{- .Content -}}</div>
+            <p><a href="{{- .Permalink -}}">открыть страницу стихотворения</a></p>
+          </details>
+        {{- end -}}
       </article>
     </div>
   </main>
