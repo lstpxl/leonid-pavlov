@@ -85,10 +85,11 @@ hugo.yaml           Site configuration
 
 ## Deployment
 
-Pushing to `main` triggers `.github/workflows/hugo.yml`, which installs the
-pinned Hugo version (`HUGO_VERSION`), builds with `--gc --minify`, and publishes
-`public/` to GitHub Pages. Keep `HUGO_VERSION` in the workflow in sync with the
-version used locally.
+Pushing to `main` triggers `.github/workflows/hugo.yml`, which installs Node and
+runs `npm run lint` (a failing lint blocks the deploy), installs the pinned Hugo
+version (`HUGO_VERSION`), builds with `--gc --minify`, and publishes `public/` to
+GitHub Pages. Keep `HUGO_VERSION` in the workflow in sync with the version used
+locally.
 
 ## Known follow-ups
 
