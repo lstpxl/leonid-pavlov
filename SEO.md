@@ -46,23 +46,48 @@ Host root (`lstpxl.github.io` repo, deployed + live):
 - [x] Requested Indexing for `/top10/`.
 - [x] Added root property `https://lstpxl.github.io/` + submitted sitemap index.
 
-### Pending / watch
+### GSC sitemap status (2026-06-29, +1 week)
 
-- Sitemap shows **"Couldn't fetch"** >5 min after re-submit. This is a known
-  **stale/delayed GSC status**, not a real failure: the sitemap returns `200`
-  `application/xml`, valid XML, and host `robots.txt` allows all (verified as
-  Googlebot). Do **not** keep re-submitting. Expect it to flip to Success within
-  ~24–48h. Indexing of URL-Inspection-requested pages proceeds regardless.
+Still **"Sitemap could not be read"**, 0 discovered pages — but the file itself is
+**not broken** (verified live):
+
+- `https://lstpxl.github.io/leonid-pavlov/sitemap.xml` → `200`,
+  `content-type: application/xml`, ~28 KB, valid XML, 242 `<loc>`, 242
+  `<lastmod>`, all URLs under the property prefix, no duplicates.
+- Host `robots.txt` allows all; verification file returns `200`.
+- Conclusion: **GSC reporting / fetch quirk**, not a site bug. Indexing can still
+  proceed via URL Inspection and internal links; sitemap is an accelerator.
+
+#### If GSC still fails after re-submit
+
+1. **URL Inspection** on the sitemap URL itself
+   (`https://lstpxl.github.io/leonid-pavlov/sitemap.xml`) → **Test live URL**.
+   Read the exact error Google reports (this is more reliable than the Sitemaps
+   summary).
+2. **Remove** the failed `/sitemap.xml` entry from Sitemaps (don't keep
+   re-submitting the same row — it can preserve a stale failure).
+3. **Re-add using the full absolute URL** (not just `sitemap.xml`):
+   `https://lstpxl.github.io/leonid-pavlov/sitemap.xml`
+4. Confirm the property is exactly **`https://lstpxl.github.io/leonid-pavlov/`**
+   (URL-prefix, trailing slash).
+5. Check the **root** property sitemap index (`https://lstpxl.github.io/sitemap.xml`)
+   — if that one shows Success, discovery still works via the index chain.
+6. **Don't block on sitemap Success** — keep Request Indexing for `/`, `/top10/`,
+   and key poems; add 1–2 backlinks (biggest lever for a new `github.io` site).
 
 ## TODO
 
 GSC:
 
-- [ ] Re-check sitemap status in 24–48h (should be Success, ~242 pages).
+- [ ] URL Inspection → **Test live URL** on `…/leonid-pavlov/sitemap.xml`; note
+      the exact error text.
+- [ ] Delete failed sitemap row → re-add as full URL
+      `https://lstpxl.github.io/leonid-pavlov/sitemap.xml`.
 - [ ] URL Inspection → Request Indexing for `/` and a few strong poems
-      (e.g. `…/verses/p03/`); rate-limited ~10–15/day, sitemap covers the rest.
-- [ ] After a few days: check **Pages** report; note the dominant
-      "not indexed" reason and act on it.
+      (e.g. `…/verses/p03/`); rate-limited ~10–15/day.
+- [ ] Check **Pages** report; note the dominant "not indexed" reason.
+- [ ] (Optional) Add `static/.nojekyll` + pretty-printed sitemap template if live
+      test shows a parse/HTML issue (unlikely given current checks).
 
 Cleanups:
 
